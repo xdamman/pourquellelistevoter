@@ -25,19 +25,19 @@ class CityPage extends React.Component {
         }
         const city = data[0].city;
         return (
-            <div>
-                <h1>Pour qui voter à {city}</h1>
-                <h2>{total} candidats</h2>
-                <ul>
-                  { data.map((r, index) => (
-                    <li key={index}>
-                      <Link href={`/${r.zipcode}/${r.firstname}/${r.lastname}`}>
-                        <a>{r.firstname} {r.lastname}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-            </div>
+          <div className="content">
+            <h1>Pour qui voter à {city}</h1>
+            <h2>{total} candidats</h2>
+            <ul>
+              { data.map((r, index) => (
+                <li key={index}>
+                  <Link href={`/${r.zipcode}/${r.firstname}/${r.lastname}`}>
+                  <a>{r.firstname} {r.lastname}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         )
     }
 
