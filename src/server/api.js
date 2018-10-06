@@ -22,7 +22,6 @@ export const getJSONFromCSVFile = (csvfile) => {
     .pipe(csv())
       .on('data', (d) => results.push(d))
       .on('end', () => {
-          console.log(results);
           cache[csvfile] = results
           return resolve(results);
       })

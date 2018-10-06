@@ -11,7 +11,7 @@ class ProfilePage extends React.Component {
     }
 
     render() {
-        console.log(">>> this.props", this.props);
+        console.log(">>> this.props.data", this.props.data);
         const { data } = this.props;
         if (!data) {
             return (

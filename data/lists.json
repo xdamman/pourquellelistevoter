@@ -1,0 +1,39 @@
+{
+  "ps": {
+    "program": "program",
+    "year_established": 1885,
+    "year_renamed": 1978,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Parti_socialiste_(Belgique)"
+  },
+  "mr": {
+    "program": "program",
+    "year_established": 1994,
+    "year_renamed": 2002,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9formateur_(Belgique)"
+  },
+  "cdh": {
+    "program": "program",
+    "year_established": 1968,
+    "year_renamed": 2002,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Centre_d%C3%A9mocrate_humaniste"
+  },
+  "cum lupis": {
+    "program": "process",
+    "website": "https://www.cumlupis.be",
+    "logo": "https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/v1/1123123/CumLupis.be_egmxgm.png",
+    "video": "https://www.youtube.com/watch?v=xOhbSnyJSao",
+    "facebook": "https://www.facebook.com/cumlupis"
+  },
+  "plan b": {
+    "program": "process",
+    "video": "https://www.youtube.com/watch?v=vdTNxluDkxo",
+    "description": "",
+    "website": "http://planb.brussels",
+    "facebook": "https://www.facebook.com/ListePlanB/",
+    "twitter": "https://twitter.com/PlanB_Brussels",
+    "donation": "https://opencollective.com/planb-brussels",
+    "citizenlist": true,
+    "sortition": true,
+    "process": true
+  }
+}

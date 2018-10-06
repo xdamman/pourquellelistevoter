@@ -4,10 +4,11 @@ const routes = nextRoutes();
 
 routes
   .add('faq')
-  .add('contributing')
+  .add('contribuer')
+  .add('city', '/villes/:city', 'city')
+  .add('list', '/villes/:city/:listname')
+  .add('cityByZipCode', '/:zipcode', 'city')
   .add('index', '/')
-  .add('city', '/:zipcode')
-  .add('profile', '/:zipcode/:firstname/:lastname');
 
 export default routes;
 

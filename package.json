@@ -1,7 +1,7 @@
 {
-  "name": "pourquivoter",
+  "name": "pourquellelistevoter.be",
   "version": "1.0.0",
-  "description": "Pour qui voter pour les élections communales belges 2018?",
+  "description": "Site Internet pourquellelistevoter.be",
   "main": "index.js",
   "engines": {
     "node": "10.x.x"
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xdamman/pourquivoter.git"
+    "url": "git+https://github.com/xdamman/pourquellelistevoter.be.git"
   },
   "keywords": [
     "communales2018",
@@ -33,9 +33,9 @@
   "author": "Xavier Damman <@xdamman>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xdamman/pourquivoter/issues"
+    "url": "https://github.com/xdamman/pourquellelistevoter.be/issues"
   },
-  "homepage": "https://github.com/xdamman/pourquivoter#readme",
+  "homepage": "https://github.com/xdamman/pourquellelistevoter.be#readme",
   "dependencies": {
     "@mdx-js/loader": "^0.15.4",
     "@mdx-js/mdx": "^0.15.4",
@@ -47,6 +47,7 @@
     "next-routes": "^1.4.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-player": "^1.6.6",
     "remark-emoji": "^2.0.1",
     "remark-images": "^0.8.1",
     "semantic-ui-react": "^0.82.5",

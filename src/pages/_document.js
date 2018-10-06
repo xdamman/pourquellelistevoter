@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <meta name="viewport" content="width=device-width, user-scalable=no" />
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Rubik" />
           <style>{`
@@ -19,7 +20,9 @@ export default class MyDocument extends Document {
             }
             .page {
               max-width: 960px;
-              margin: 0 auto;
+              width: 100%;
+              margin: 2rem auto;
+              padding: 0 1rem;
             }
             input, button {
               font-size: 2rem;
@@ -30,6 +33,59 @@ export default class MyDocument extends Document {
             .row {
               display: flex;
               margin: 1rem 0;
+            }
+            .home .ui.teal.button {
+              margin: 0.5rem 0.5rem 0.5rem 0;
+              min-width: 20rem;
+            }
+            .ListSummmary {
+              margin: 2rem 0;
+            }
+            .recommendation {
+              margin-top: 2rem;
+              padding: 1rem;
+              color: #0c5460;
+              background-color: #d1ecf1;
+              border-color: #bee5eb;
+            }
+            .recommendation p {
+              margin-top: 2rem;
+            }
+            .emoji {
+              font-size: 64px;
+            }
+            table {
+              margin: 2rem 0;
+            }
+
+            .video {
+              position: relative;
+              padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+            }
+
+            .player {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            ul.list {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+            ul.list li {
+              margin: 2rem 0;
+            }
+            h3 {
+              margin-bottom: 0.5rem;
+            }
+            @media (max-width: 600px) {
+              .home .ui.teal.button {
+                width: 100%;
+              }
             }
           `}</style>
         </Head>
