@@ -29,7 +29,7 @@ class ListPage extends React.Component {
         }
         const listInfo = listsData[list.name.toLowerCase()];
         let recommendation;
-        if (listInfo.program === 'process') {
+        if (listInfo && listInfo.program === 'process') {
           listInfo.name = list.name;
           recommendation = listInfo;
         }
@@ -40,11 +40,13 @@ class ListPage extends React.Component {
             </Head>
             <h1>Pour qui voter à {city}?</h1>
             <h2>A propos de la liste {list.name.toUpperCase()}</h2>
-            <ul className="links">
-              { listInfo.website && <li><a href={listInfo.website}>{listInfo.website}</a></li>}
-              { listInfo.facebook && <li><a href={listInfo.facebook}>Facebook Page</a></li>}
-              { listInfo.twitter && <li><a href={listInfo.twitter}>Twitter: @{listInfo.twitter.replace(/https?:\/\/(www\.)?twitter\.com\//i, '')}</a></li>}
-            </ul>
+            { listInfo &&
+              <ul className="links">
+                { listInfo.website && <li><a href={listInfo.website}>{listInfo.website}</a></li>}
+                { listInfo.facebook && <li><a href={listInfo.facebook}>Facebook Page</a></li>}
+                { listInfo.twitter && <li><a href={listInfo.twitter}>Twitter: @{listInfo.twitter.replace(/https?:\/\/(www\.)?twitter\.com\//i, '')}</a></li>}
+              </ul>
+            }
 
             { recommendation &&
               <div className="recommendation">
