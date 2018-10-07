@@ -2,17 +2,18 @@ import React from 'react';
 
 class ProfilePage extends React.Component {
 
-    static getInitialProps({ req: { data }, query }) {
-        return { query, data };
+    static getInitialProps({ req, query }) {
+        return { query, data: req && req.data };
     }
 
     constructor(props) {
         super(props);
+        this.data = props.data;
     }
 
     render() {
-        console.log(">>> this.props.data", this.props.data);
-        const { data } = this.props;
+        console.log(">>> this.props.data", this.data);
+        const data = this.data;
         if (!data) {
             return (
                 <div>

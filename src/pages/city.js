@@ -5,17 +5,17 @@ import { plural } from '../lib/utils';
 
 class CityPage extends React.Component {
 
-    static getInitialProps({ req: { data }, query }) {
-        return { query, data };
+    static getInitialProps({ req, query }) {
+        return { query, data: req && req.data };
     }
 
     constructor(props) {
         super(props);
+        this.data = props.data;
     }
 
     render() {
-        // console.log(">>> this.props.data", this.props.data);
-        const { city, lists } = this.props.data;
+        const { city, lists } = this.data;
         const recommendations = [];
         Object.keys(lists).map(listname => {
             const listInfo = lists[listname].info;
