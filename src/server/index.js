@@ -11,6 +11,7 @@ import routes from '../routes';
 import logger from '../logger';
 import { titleCase } from '../lib/utils';
 import { registerToNewsletter } from '../lib/mailchimp';
+import listsData from '../../data/lists.json';
 
 const {
   PORT,
@@ -25,6 +26,27 @@ const nextApp = next({
 });
 
 const handler = routes.getRequestHandler(nextApp);
+
+const inc = (obj, key, increment = 1) => {
+  obj[key] = obj[key] || 0;
+  obj[key] += increment;
+}
+
+const getListInfo = (listname, zipcode) => {
+  if (!listname) return;
+  console.log(">>> getListInfo", listname, typeof zipcode, zipcode);
+  for (let i=0; i< listsData.length; i++) {
+    const list = listsData[i];
+    if (list.sigle.toLowerCase() === listname.toLowerCase()) {
+      if (!list.zipcode || Number(list.zipcode) === Number(zipcode)) return list;
+    }
+    if (listname.toLowerCase().indexOf(list.sigle.toLowerCase()) > -1) {
+      return list;
+    }
+  }
+  return null;
+}
+
 
 nextApp.prepare().then(() => {
   const server = express();
@@ -43,11 +65,6 @@ nextApp.prepare().then(() => {
 
   server.get('/api/data/:csvfile', api.getDataFromCSV);
 
-  const inc = (obj, key, increment = 1) => {
-    obj[key] = obj[key] || 0;
-    obj[key] += increment;
-  }
-
   server.get('/villes/:city', async (req, res, next) => {
     const city = req.params.city.toLowerCase();
     console.log(">>> getting candidates for", city);
@@ -59,6 +76,9 @@ nextApp.prepare().then(() => {
       // console.log(">>> keeping", r.firstname, r.lastname, r.list, r.zipcode, r.city);
       lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
       lists[r.list].candidates.push(r);
+      if (lists[r.list].info === undefined) {
+        lists[r.list].info = getListInfo(r.list, r.zipcode);
+      }
       if (!lists[r.list].party) {
         lists[r.list].party = r.party;
       }
@@ -114,6 +134,7 @@ nextApp.prepare().then(() => {
         list.party = c.party;
       }
     })
+    list.info = getListInfo(listname, list.zipcode);
     req.data = {
       city: titleCase(city),
       list,
@@ -134,17 +155,26 @@ nextApp.prepare().then(() => {
   });
 
   server.get('/:zipcode', async (req, res, next) => {
-    const zipcode = req.params.zipcode;
+    let zipcode = Number(req.params.zipcode);
+    if ([1020,1120,1130].includes(zipcode)) {
+      zipcode = 1000;
+    }
+    if ([1348].includes(zipcode)) {
+      zipcode = 1340;
+    }
     console.log(">>> getting candidates for", zipcode);
     const csv = await api.getJSONFromCSVFile('candidates_with_cumuleo');
     console.log(">>> loading", csv.length, "rows from candidates_with_cumuleo.csv");
     const lists = {};
     let city;
     const candidates = csv.filter(r => {
-      if (r.zipcode !== zipcode) return false;
+      if (Number(r.zipcode) !== zipcode) return false;
       if (!city) city = r.city;
       lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
       lists[r.list].candidates.push(r);
+      if (lists[r.list].info === undefined) {
+        lists[r.list].info = getListInfo(r.list, r.zipcode);
+      }
       if (!lists[r.list].party) {
         lists[r.list].party = r.party;
       }
@@ -163,7 +193,7 @@ nextApp.prepare().then(() => {
       city: titleCase(city),
       lists
     };
-    console.log(">>> data", req.data);
+    // console.log(">>> data", req.data);
     next();
   });
 

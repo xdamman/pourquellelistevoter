@@ -57,6 +57,9 @@ export default class MyDocument extends Document {
             table {
               margin: 2rem 0;
             }
+            td.unknown {
+              color: rgba(0, 0, 0, 0.2);
+            }
 
             .video {
               position: relative;

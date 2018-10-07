@@ -1,30 +1,82 @@
-{
-  "ps": {
+[
+  {
+    "sigle": "ps",
     "program": "program",
     "year_established": 1885,
     "year_renamed": 1978,
     "wikipedia": "https://fr.wikipedia.org/wiki/Parti_socialiste_(Belgique)"
   },
-  "mr": {
+  {
+    "sigle": "mr",
     "program": "program",
     "year_established": 1994,
     "year_renamed": 2002,
     "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9formateur_(Belgique)"
   },
-  "cdh": {
+  {
+    "sigle": "cdh",
     "program": "program",
     "year_established": 1968,
     "year_renamed": 2002,
     "wikipedia": "https://fr.wikipedia.org/wiki/Centre_d%C3%A9mocrate_humaniste"
   },
-  "cum lupis": {
+  {
+    "sigle": "ecolo",
+    "year_established": 1980,
+    "wikipedia": "https://en.wikipedia.org/wiki/Ecolo",
+    "program": "program",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ecolo_Logo.svg/654px-Ecolo_Logo.svg.png"
+  },
+  {
+    "sigle": "citoyens",
+    "zipcode": 7000,
+    "facebook": "https://www.facebook.com/citoyens.mons/",
+    "website": "https://citoyens-mons.be/",
+    "program": "process"
+  },
+  {
+    "sigle": "citoyens!",
+    "zipcode": 4970,
+    "facebook": "https://www.facebook.com/citoyenstavelot/",
+    "website": "https://citoyenstavelot.be",
+    "program": "process"
+  },
+  {
+    "sigle": "citoyen lens",
+    "program": "process",
+    "year_established": 2018,
+    "website": "https://www.mouvement-citoyen.eu/",
+    "facebook": "https://www.facebook.com/CitoyenLens/"
+  },
+  {   
+    "sigle": "locale",
+    "zipcode": 1348,
+    "year_established": 2018,
+    "program": "process",
+    "website": "http://locale-olln.be",
+    "facebook": "https://www.facebook.com/localeolln/",
+    "twitter": "https://twitter.com/LocaleOlln",
+    "email": "contact@locale-olln.be"
+  },
+  {
+    "sigle": "kayoux",
+    "zipcode": 1348,
+    "established_year": 2017,
+    "program": "process",
+    "facebook": "https://www.facebook.com/CollectifKayoux",
+    "twitter": "https://twitter.com/KayouxBE",
+    "video": "https://www.youtube.com/channel/UCDFfSQYxCHsk9exf3T_M4QA"
+  },
+  {
+    "sigle": "cum lupis",
     "program": "process",
     "website": "https://www.cumlupis.be",
     "logo": "https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/v1/1123123/CumLupis.be_egmxgm.png",
     "video": "https://www.youtube.com/watch?v=xOhbSnyJSao",
     "facebook": "https://www.facebook.com/cumlupis"
   },
-  "plan b": {
+  {
+    "sigle": "plan b",
     "program": "process",
     "video": "https://www.youtube.com/watch?v=vdTNxluDkxo",
     "description": "",
@@ -36,4 +88,4 @@
     "sortition": true,
     "process": true
   }
-}
+]

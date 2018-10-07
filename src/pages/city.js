@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import listsData from '../../data/lists.json';
+import { plural } from '../lib/utils';
 
 class CityPage extends React.Component {
 
@@ -14,15 +14,14 @@ class CityPage extends React.Component {
     }
 
     render() {
-        console.log(">>> this.props.data", this.props.data);
+        // console.log(">>> this.props.data", this.props.data);
         const { city, lists } = this.props.data;
-        let recommendation;
+        const recommendations = [];
         Object.keys(lists).map(listname => {
-            const listInfo = listsData[listname.toLowerCase()];
-            console.log(">>> listInfo", listname, listInfo);
+            const listInfo = lists[listname].info;
             if (listInfo && listInfo.program === 'process') {
               listInfo.name = listname;
-              recommendation = listInfo;
+              recommendations.push(listInfo);
             }
         });
 
@@ -48,11 +47,11 @@ class CityPage extends React.Component {
             `}</style>
             <h1>Pour qui voter à {city}?</h1>
             <h2>{totalLists} listes</h2>
-            { recommendation &&
+            { recommendations.length > 0 &&
               <div className="recommendation">
                 <div className="emoji">🎉</div>
-                <p>Il y a une liste citoyenne dans votre ville qui limite avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
-                <ListSummary listname={recommendation.name} lists={lists} city={city} />
+                <p>Il y a {recommendations.length} {plural(recommendations.length, 'liste citoyenne', 'listes citoyennes')} dans votre ville qui {plural(recommendations.length, 'limite', 'limitent')} avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
+                { recommendations.map(recommendation => <ListSummary listname={recommendation.name} lists={lists} city={city} />) }
               </div>
             }
             { Object.keys(lists).map((listname, index) => <ListSummary listname={listname} lists={lists} city={city} key={index} />) }
@@ -69,13 +68,17 @@ const ListSummary = ({ key, listname, city, lists }) => (
     </h3>
     <div className="stats">
       <span className="col"><Link href={`/villes/${city}/${listname}`}><a>{lists[listname].candidates.length} candidats</a></Link></span>
-      { lists[listname].totalPoliticians ? <span className="col"> dont {lists[listname].totalPoliticians} sont des politiciens</span> : '' }
+      { lists[listname].totalPoliticians ? <span className="col"> dont au moins {lists[listname].totalPoliticians} {lists[listname].totalPoliticians > 1 ? 'sont des politiciens' : 'est un.e politicien.ne'}</span> : '' }
     </div>
-    { listsData[listname.toLowerCase()] && listsData[listname.toLowerCase()].year_established < 2000 &&
+    { lists[listname].info && lists[listname].info.program === 'process' &&
+      <p>✅ Cette liste milite avant tout pour un nouveau processus démocratique pour impliquer le citoyen dans les décisions politiques.
+        En votant pour cette liste, vous ne devrez pas attendre 2024 ou descendre dans la rue pour faire entendre votre voix!</p>
+    }
+    { lists[listname].info && lists[listname].info.year_established < 2000 &&
       <p>⚠️ En votant pour n'importe quel candidat de cette liste, vous votez également pour la <a href="https://fr.wikipedia.org/wiki/Particratie">particratie</a>.</p>
     }
     { (lists[listname].totalCumuls || lists[listname].totalYearsInPolitics)
-      ? <div className="col">Ensemble, ils cumulent plus de {lists[listname].totalCumuls} mandats et ont déjà passé plus de {lists[listname].totalYearsInPolitics} années en politique. Pour mettre fin à la particratie, favorisez plutôt une autre liste!</div>
+      ? <div className="col">Ensemble, ils cumulent plus de {lists[listname].totalCumuls} mandats et ont déjà passé plus de {lists[listname].totalYearsInPolitics} années en politique.</div>
       : '' }
   </div>
 )
