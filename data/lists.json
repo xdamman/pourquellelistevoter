@@ -17,14 +17,16 @@
   },
   {
     "sigle": "cdh",
+    "original_name": "parti catholique",
     "program": "program",
-    "year_established": 1968,
+    "year_established": 1868,
     "year_renamed": 2002,
     "particracy": true,
     "wikipedia": "https://fr.wikipedia.org/wiki/Centre_d%C3%A9mocrate_humaniste"
   },
   {
     "sigle": "ecolo",
+    "climate_first": true,
     "year_established": 1980,
     "wikipedia": "https://en.wikipedia.org/wiki/Ecolo",
     "program": "program",
@@ -32,6 +34,7 @@
   },
   {
     "sigle": "défi",
+    "original_name": "FDF",
     "year_established": 1964
   },
   {
@@ -50,6 +53,7 @@
   },
   {
     "sigle": "PP",
+    "year_established": 2009,
     "inclusive": false,
     "website": "https://partipopulaire.be/"
   },
