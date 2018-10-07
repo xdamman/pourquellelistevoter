@@ -4,6 +4,7 @@
     "program": "program",
     "year_established": 1885,
     "year_renamed": 1978,
+    "particracy": true,
     "wikipedia": "https://fr.wikipedia.org/wiki/Parti_socialiste_(Belgique)"
   },
   {
@@ -11,6 +12,7 @@
     "program": "program",
     "year_established": 1994,
     "year_renamed": 2002,
+    "particracy": true,
     "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9formateur_(Belgique)"
   },
   {
@@ -18,6 +20,7 @@
     "program": "program",
     "year_established": 1968,
     "year_renamed": 2002,
+    "particracy": true,
     "wikipedia": "https://fr.wikipedia.org/wiki/Centre_d%C3%A9mocrate_humaniste"
   },
   {
@@ -40,6 +43,22 @@
     "facebook": "https://www.facebook.com/citoyenstavelot/",
     "website": "https://citoyenstavelot.be",
     "program": "process"
+  },
+  {
+    "sigle": "PP",
+    "inclusive": false,
+    "website": "https://partipopulaire.be/"
+  },
+  {
+    "sigle": "N-VA",
+    "year_established": 2001,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Nieuw-Vlaamse_Alliantie",
+    "inclusive": false
+  },
+  {
+    "sigle": "PTB",
+    "year_established": 1979,
+    "wikipedia": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Belgium"
   },
   {
     "sigle": "citoyen lens",

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import ReactPlayer from 'react-player'
+import ListWarnings from '../components/ListWarnings';
 
 class ListPage extends React.Component {
 
@@ -58,20 +59,7 @@ class ListPage extends React.Component {
           { (stats.totalCumuls || stats.totalYearsInPolitics) ? <div>Ensemble, ils cumulent plus de {stats.totalCumuls} mandats et ont déjà passé plus de {stats.totalYearsInPolitics} années en politique.</div> : '' }
         </p>
 
-        {  list.info && list.info.year_established < 2000 &&
-          <div>
-            <p>
-              ⚠️ En votant pour n'importe quel candidat de cette liste, vous votez également pour la <a href="https://fr.wikipedia.org/wiki/Particratie">particratie</a>.
-            </p>
-            <p>
-              ⚠️ Ce parti a été créé au {Math.floor(list.info.year_established / 100)}e siècle (<a href={list.info.wikipedia}>Wikipedia</a>).<br />
-              Êtes-vous sûr que c'est cela dont on a encore besoin pour faire face aux défis du 21e siècle?
-            </p>
-            <p>
-              <Link href={`/villes/${city}`}><a>Voir les autres listes à {city}</a></Link>
-            </p>
-          </div>
-        }
+        <ListWarnings list={list} />
         
         { list.info && list.info.video && <div className="video">
             <ReactPlayer url={list.info.video} className="player" width='320' height='240' />

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import { plural } from '../lib/utils';
+import ListWarnings from '../components/ListWarnings';
 
 class CityPage extends React.Component {
 
@@ -40,11 +41,6 @@ class CityPage extends React.Component {
             <Head>
               <title>Pour qui voter à {city}?</title>
             </Head>
-            <style jsx>{`
-                .stats {
-                  margin-bottom: 0.5rem;
-                }
-            `}</style>
             <h1>Pour qui voter à {city}?</h1>
             <h2>{totalLists} listes</h2>
             { recommendations.length > 0 &&
@@ -63,23 +59,22 @@ class CityPage extends React.Component {
 
 const ListSummary = ({ key, listname, city, lists }) => (
   <div key={key} className="ListSummmary">
+    <style jsx>{`
+        .stats {
+          margin: 0.5rem 0;
+        }
+    `}</style>
     <h3 className="listname">
       <Link href={`/villes/${city}/${listname}`}><a>{listname}</a></Link>
     </h3>
+    <ListWarnings list={lists[listname]} />
     <div className="stats">
       <span className="col"><Link href={`/villes/${city}/${listname}`}><a>{lists[listname].candidates.length} candidats</a></Link></span>
       { lists[listname].totalPoliticians ? <span className="col"> dont au moins {lists[listname].totalPoliticians} {lists[listname].totalPoliticians > 1 ? 'sont des politiciens' : 'est un.e politicien.ne'}</span> : '' }
-    </div>
-    { lists[listname].info && lists[listname].info.program === 'process' &&
-      <p>✅ Cette liste milite avant tout pour un nouveau processus démocratique pour impliquer le citoyen dans les décisions politiques.
-        En votant pour cette liste, vous ne devrez pas attendre 2024 ou descendre dans la rue pour faire entendre votre voix!</p>
-    }
-    { lists[listname].info && lists[listname].info.year_established < 2000 &&
-      <p>⚠️ En votant pour n'importe quel candidat de cette liste, vous votez également pour la <a href="https://fr.wikipedia.org/wiki/Particratie">particratie</a>.</p>
-    }
     { (lists[listname].totalCumuls || lists[listname].totalYearsInPolitics)
-      ? <div className="col">Ensemble, ils cumulent plus de {lists[listname].totalCumuls} mandats et ont déjà passé plus de {lists[listname].totalYearsInPolitics} années en politique.</div>
-      : '' }
+        ? <div className="col">Ensemble, ils cumulent plus de {lists[listname].totalCumuls} mandats et ont déjà passé plus de {lists[listname].totalYearsInPolitics} années en politique.</div>
+        : '' }
+    </div>
   </div>
 )
 
