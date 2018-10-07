@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Button } from 'semantic-ui-react'
 import Router from 'next/router'
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 class HomePage extends React.Component {
 
@@ -21,7 +22,6 @@ class HomePage extends React.Component {
   }
 
   render() {
-    console.log(">>> this.props", this.props);
     const { firstname } = this.props;
     return (
         <div>
@@ -54,6 +54,7 @@ class HomePage extends React.Component {
               onClick={() => this.goto('/contribuer')}
               >contribuer</Button>
           </div>
+          <Footer />
         </div>
     )
   }

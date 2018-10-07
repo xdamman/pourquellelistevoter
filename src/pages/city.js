@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { plural } from '../lib/utils';
 import ListWarnings from '../components/ListWarnings';
+import Footer from '../components/Footer';
 
 class CityPage extends React.Component {
 
@@ -43,6 +44,13 @@ class CityPage extends React.Component {
             </Head>
             <h1>Pour qui voter à {city}?</h1>
             <h2>{totalLists} listes</h2>
+            { recommendations.length === 0 &&
+              <div className="recommendation">
+                <div className="emoji">😔</div>
+                <p>Il n'y a malheureusement pas (encore) de liste citoyenne dans votre commune qui milite non pas pour un programme mais avant tout pour une nouvelle façon d'inclure tous les citoyens dans les prises de décisions politiques.</p>
+                <p>Si vous voulez créer ou soutenir la création d'une liste citoyenne dans votre commune, <a href="https://goo.gl/forms/r52kdWC4l22izzGr2">faites-le nous savoir ici</a></p>              
+              </div>
+            }
             { recommendations.length > 0 &&
               <div className="recommendation">
                 <div className="emoji">🎉</div>
@@ -51,6 +59,7 @@ class CityPage extends React.Component {
               </div>
             }
             { Object.keys(lists).map((listname, index) => <ListSummary listname={listname} lists={lists} city={city} key={index} />) }
+            <Footer />
           </div>
         )
     }

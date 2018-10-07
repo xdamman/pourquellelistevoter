@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import ReactPlayer from 'react-player'
 import ListWarnings from '../components/ListWarnings';
+import Footer from '../components/Footer';
 
 class ListPage extends React.Component {
 
@@ -99,6 +100,7 @@ class ListPage extends React.Component {
         <p>
           Pour rajouter des informations à propos de cette liste, veuillez consulter la page sur <Link href="/contribuer"><a>comment contribuer</a></Link>.
         </p>
+        <Footer />
       </div>
     )
   }
