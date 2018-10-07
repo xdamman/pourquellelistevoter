@@ -109,7 +109,7 @@ nextApp.prepare().then(() => {
     res.setHeader('Cache-Control', `public, max-age=${60 * 15}`); // cache for 15mn
     const city = req.params.city.toLowerCase();
     console.log(">>> getting candidates for", city);
-    const lists = {};
+    const listsByName = {};
     let zipcode;
     candidates.filter(r => {
       if (r.city.toLowerCase() !== city) return false;
@@ -117,25 +117,35 @@ nextApp.prepare().then(() => {
       if (!zipcode) {
         zipcode = r.zipcode;
       }
-      lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
-      lists[r.list].candidates.push(r);
-      if (lists[r.list].info === undefined) {
-        lists[r.list].info = getListInfo(r.list, r.zipcode);
+      listsByName[r.list] = listsByName[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
+      listsByName[r.list].candidates.push(r);
+      if (listsByName[r.list].info === undefined) {
+        listsByName[r.list].info = getListInfo(r.list, r.zipcode);
       }
-      if (!lists[r.list].party) {
-        lists[r.list].party = r.party;
+      if (!listsByName[r.list].party) {
+        listsByName[r.list].party = r.party;
       }
       if (r.cumuleo_url) {
-        inc(lists[r.list], 'totalPoliticians');
-        inc(lists[r.list], 'totalCumuls', parseInt(r.cumuls_2017));
+        inc(listsByName[r.list], 'totalPoliticians');
+        inc(listsByName[r.list], 'totalCumuls', parseInt(r.cumuls_2017));
         for (let i = 2004; i < 2016; i++ ) {
           if (r[i]) {
-            inc(lists[r.list], 'totalYearsInPolitics');
+            inc(listsByName[r.list], 'totalYearsInPolitics');
           }
         }
       }
       return true;
     });
+    const lists = [];
+    for (let listname in listsByName) {
+      lists.push({
+        name: listname,
+        ...listsByName[listname]
+      });
+    }
+    lists.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    lists.map((l,i) => console.log(i, l.name));
+
     req.data = {
       city: {
         name: titleCase(city),
@@ -209,30 +219,39 @@ nextApp.prepare().then(() => {
     let zipcode = getCanonicalZipCode(req.params.zipcode);
 
     console.log(">>> getting candidates for", zipcode);
-    const lists = {};
+    const listsByName = {};
     let city;
     candidates.filter(r => {
       if (Number(r.zipcode) !== zipcode) return false;
       if (!city) city = r.city;
-      lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
-      lists[r.list].candidates.push(r);
-      if (lists[r.list].info === undefined) {
-        lists[r.list].info = getListInfo(r.list, r.zipcode);
+      listsByName[r.list] = listsByName[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
+      listsByName[r.list].candidates.push(r);
+      if (listsByName[r.list].info === undefined) {
+        listsByName[r.list].info = getListInfo(r.list, r.zipcode);
       }
-      if (!lists[r.list].party) {
-        lists[r.list].party = r.party;
+      if (!listsByName[r.list].party) {
+        listsByName[r.list].party = r.party;
       }
       if (r.cumuleo_url) {
-        inc(lists[r.list], 'totalPoliticians');
-        inc(lists[r.list], 'totalCumuls', parseInt(r.cumuls_2017));
+        inc(listsByName[r.list], 'totalPoliticians');
+        inc(listsByName[r.list], 'totalCumuls', parseInt(r.cumuls_2017));
         for (let i = 2004; i < 2016; i++ ) {
           if (r[i]) {
-            inc(lists[r.list], 'totalYearsInPolitics');
+            inc(listsByName[r.list], 'totalYearsInPolitics');
           }
         }
       }
       return true;
     });
+    const lists = [];
+    for (let listname in listsByName) {
+      lists.push({
+        name: listname,
+        ...listsByName[listname]
+      });
+    }
+    lists.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    lists.map((l,i) => console.log(i, l.name));
     req.data = {
       city: {
         zipcode,

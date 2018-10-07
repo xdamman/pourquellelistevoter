@@ -39,6 +39,11 @@ class ListPage extends React.Component {
     }
     return (
       <div className="content">
+        <style jsx>{`
+           section {
+             margin: 2rem 0;
+           }
+        `}</style>
         <Head>
           <title>Pour qui voter à {city.name}? A propos de la liste {list.name.toUpperCase()}...</title>
         </Head>
@@ -66,7 +71,7 @@ class ListPage extends React.Component {
           { (stats.totalCumuls || stats.totalYearsInPolitics) ? <div>Ensemble, ils cumulent plus de {stats.totalCumuls} mandats et ont déjà passé plus de {stats.totalYearsInPolitics} années en politique.</div> : '' }
         </p>
 
-        <ListWarnings list={list} />
+        <section><ListWarnings list={list} /></section>
         
         { list.info && list.info.video && <div className="video">
             <ReactPlayer url={list.info.video} className="player" width='320' height='240' />
