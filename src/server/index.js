@@ -71,9 +71,13 @@ nextApp.prepare().then(() => {
     const csv = await api.getJSONFromCSVFile('candidates_with_cumuleo');
     console.log(">>> loading", csv.length, "rows from candidates_with_cumuleo.csv");
     const lists = {};
+    let zipcode;
     const candidates = csv.filter(r => {
       if (r.city.toLowerCase() !== city) return false;
       // console.log(">>> keeping", r.firstname, r.lastname, r.list, r.zipcode, r.city);
+      if (!zipcode) {
+        zipcode = r.zipcode;
+      }
       lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
       lists[r.list].candidates.push(r);
       if (lists[r.list].info === undefined) {
@@ -95,6 +99,7 @@ nextApp.prepare().then(() => {
     });
     req.data = {
       city: titleCase(city),
+      zipcode,
       lists
     };
     console.log(">>> data", req.data);
@@ -111,7 +116,6 @@ nextApp.prepare().then(() => {
     const candidates = csv.filter(r => {
       if (r.city.toLowerCase() !== city) return false;
       if (r.list.toLowerCase() !== listname) return false;
-      console.log(">>> keeping", r.firstname, r.lastname, r.list, r.zipcode, r.city, r.cumuleo_url);
       if (r.cumuleo_url) {
         inc(stats, 'totalPoliticians');
         inc(stats, 'totalCumuls', parseInt(r.cumuls_2017));
@@ -191,6 +195,7 @@ nextApp.prepare().then(() => {
     });
     req.data = {
       city: titleCase(city),
+      zipcode,
       lists
     };
     // console.log(">>> data", req.data);

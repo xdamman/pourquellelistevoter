@@ -17,7 +17,7 @@ class CityPage extends React.Component {
     }
 
     render() {
-        const { city, lists } = this.data;
+        const { city, lists, zipcode } = this.data;
         const recommendations = [];
         Object.keys(lists).map(listname => {
             const listInfo = lists[listname].info;
@@ -33,7 +33,7 @@ class CityPage extends React.Component {
             return (
                 <div>
                     <h1>Désolé, nous n'avons pas de données pour cette commune</h1>
-                    <p>Vous pouvez nous aider en contribuant à <a href="https://docs.google.com/spreadsheets/d/1tdnQS234_Zpw4XpbkbAISI6XM0jzw8w7IKe-PLMLj6Y/edit#gid=440894185">ce fichier public</a>. Merci!</p>
+                    <p>Vous pouvez nous aider en <Link href="/contribuer"><a>contribuant à ce projet</a></Link>. Merci!</p>
                 </div>
             )
         }
@@ -48,7 +48,7 @@ class CityPage extends React.Component {
               <div className="recommendation">
                 <div className="emoji">😔</div>
                 <p>Il n'y a malheureusement pas (encore) de liste citoyenne dans votre commune qui milite non pas pour un programme mais avant tout pour une nouvelle façon d'inclure tous les citoyens dans les prises de décisions politiques.</p>
-                <p>Si vous voulez créer ou soutenir la création d'une liste citoyenne dans votre commune, <a href="https://goo.gl/forms/r52kdWC4l22izzGr2">faites-le nous savoir ici</a></p>              
+                <p>Si vous voulez créer ou soutenir la création d'une liste citoyenne dans votre commune, <a href={`https://docs.google.com/forms/d/e/1FAIpQLSf_c5tsGZewUwH4ylwZLBmi2n1Zh6eJ99BUsP4HlnI3yn2VAw/viewform?entry.49500494=${zipcode}`}>faites-le nous savoir ici</a></p>              
               </div>
             }
             { recommendations.length > 0 &&
