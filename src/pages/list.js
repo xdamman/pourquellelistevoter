@@ -90,8 +90,7 @@ class ListPage extends React.Component {
           <b>Notes:</b><br />
           <ul>
             <li>Tous les mandats ne sont pas égaux. Certains sont rémunérés, d'autres pas. Certains demandent plus de temps que d'autres. Cliquez sur le lien pour voir plus d'informations sur ces mandats sur le site Cumuleo.be</li>
-            <li>Les mandats qui n'entraînent pas d'obligations de déclarations de mandats à la Cour des comptes (conseiller communal, provincial et de CPAS) sont des mandats non exécutifs et ne sont pas repris dans ce tableau.</li>
-            <li>Les "années en politiques" ne représentent que les années avec des fonctions exécutives</li>
+            <li>Les "années en politiques" ne représentent que les années où le mandataire a exercé, depuis 2004, un ou plusieurs mandats soumis à l'obligation de déclaration envers la Cour des comptes (les mandats de conseiller communal, provincial et de CPAS ne sont donc pas inclus).</li>
           </ul>
         </div>
         <p><br />
