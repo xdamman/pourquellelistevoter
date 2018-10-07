@@ -16,6 +16,7 @@ class Footer extends React.Component {
           .Footer {
             margin: 3rem 0 1rem 0;
             border-top: 1px solid #ccc;
+            padding: 0.5rem 0;
           }
           ul {
             list-style: none;

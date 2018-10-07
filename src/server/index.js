@@ -19,6 +19,16 @@ const {
 } = process.env;
 
 
+let cities = [];
+const citiesByZipcode = {};
+api.getJSONFromCSVFile('cities').then(rows => {
+  cities = rows;
+  console.log(">>> loading", cities.length, "cities");
+  cities.forEach(c => {
+    citiesByZipcode[c.zipcode] = c.city;
+  });
+});
+
 const port = parseInt(PORT, 10) || 3000;
 
 const nextApp = next({
@@ -33,6 +43,26 @@ const inc = (obj, key, increment = 1) => {
   obj[key] += increment;
 }
 
+/**
+ * Getting the right canonical zipcode is not trivial
+ * 1000, 1020, 1120, 1130: Bruxelles ville
+ * 1081: Koekelberg
+ * 1082: Berchem-Sainte-Agathe
+ * 1420, 1421, 1428: Braine-l'Alleud
+ * 
+ * @param {*} zipcode 
+ */
+const getCanonicalZipCode = (zipcode) => {
+  const zc = Number(zipcode);
+  if ([1000,1020,1120,1130].includes(zc)) return 1000;
+  if (citiesByZipcode[zc]) return zc;
+  let res;
+  cities.forEach(c => {
+    if (Math.floor(Number(c.zipcode)/10) === Math.floor(zc/10))
+      res = Number(c.zipcode);
+  });
+  return res;
+}
 const getCityInfo = (zipcode) => citiesData.find(city => (Number(city.zipcode) === Number(zipcode)));
 
 const getListInfo = (listname, zipcode) => {
@@ -172,20 +202,15 @@ nextApp.prepare().then(() => {
 
   server.get('/:zipcode', async (req, res, next) => {
     res.setHeader('Cache-Control', `public, max-age=${60 * 15}`); // cache for 15mn
-    let zipcode = Number(req.params.zipcode);
-    if ([1020,1120,1130].includes(zipcode)) {
-      zipcode = 1000;
-    }
-    if ([1348].includes(zipcode)) {
-      zipcode = 1340;
-    }
+    let zipcode = getCanonicalZipCode(req.params.zipcode);
+
     console.log(">>> getting candidates for", zipcode);
     const csv = await api.getJSONFromCSVFile('candidates_with_cumuleo');
     console.log(">>> loading", csv.length, "rows from candidates_with_cumuleo.csv");
     const lists = {};
     let city;
     const candidates = csv.filter(r => {
-      if (Math.floor(Number(r.zipcode)/10) !== Math.floor(Number(zipcode)/10)) return false;
+      if (Number(r.zipcode) !== zipcode) return false;
       if (!city) city = r.city;
       lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
       lists[r.list].candidates.push(r);
