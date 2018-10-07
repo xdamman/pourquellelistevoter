@@ -19,7 +19,7 @@ const {
 } = process.env;
 
 
-let cities = [];
+let candidates = [], cities = [];
 const citiesByZipcode = {};
 api.getJSONFromCSVFile('cities').then(rows => {
   cities = rows;
@@ -28,7 +28,10 @@ api.getJSONFromCSVFile('cities').then(rows => {
     citiesByZipcode[c.zipcode] = c.city;
   });
 });
-
+api.getJSONFromCSVFile('candidates_with_cumuleo').then(rows => {
+  candidates = rows;
+  console.log(">>> loading", candidates.length, "candidates");
+});
 const port = parseInt(PORT, 10) || 3000;
 
 const nextApp = next({
@@ -90,6 +93,10 @@ nextApp.prepare().then(() => {
 
   server.use(express.json());
 
+  server.get('/stats', (req, res) => {
+    res.sendFile(path.resolve(__dirname + '/../pages/stats.html'));
+  });
+
   server.post('/api/newsletter/register', (req, res) => {
     const email = get(req, 'body.email');
     const newsletter = get(req, 'body.newsletter');
@@ -102,11 +109,9 @@ nextApp.prepare().then(() => {
     res.setHeader('Cache-Control', `public, max-age=${60 * 15}`); // cache for 15mn
     const city = req.params.city.toLowerCase();
     console.log(">>> getting candidates for", city);
-    const csv = await api.getJSONFromCSVFile('candidates_with_cumuleo');
-    console.log(">>> loading", csv.length, "rows from candidates_with_cumuleo.csv");
     const lists = {};
     let zipcode;
-    const candidates = csv.filter(r => {
+    candidates.filter(r => {
       if (r.city.toLowerCase() !== city) return false;
       // console.log(">>> keeping", r.firstname, r.lastname, r.list, r.zipcode, r.city);
       if (!zipcode) {
@@ -148,10 +153,9 @@ nextApp.prepare().then(() => {
     const city = req.params.city.toLowerCase();
     const listname = req.params.listname.toLowerCase();
     console.log(">>> getting candidates for", city, listname);
-    const csv = await api.getJSONFromCSVFile('candidates_with_cumuleo');
     const list = { name: listname, candidates: [] };
     const stats = { totalPoliticians: 0, totalCumuls: 0, parties: {} };
-    const candidates = csv.filter(r => {
+    candidates.filter(r => {
       if (r.city.toLowerCase() !== city) return false;
       if (r.list.toLowerCase() !== listname) return false;
       if (!list.zipcode) list.zipcode = r.zipcode;
@@ -205,11 +209,9 @@ nextApp.prepare().then(() => {
     let zipcode = getCanonicalZipCode(req.params.zipcode);
 
     console.log(">>> getting candidates for", zipcode);
-    const csv = await api.getJSONFromCSVFile('candidates_with_cumuleo');
-    console.log(">>> loading", csv.length, "rows from candidates_with_cumuleo.csv");
     const lists = {};
     let city;
-    const candidates = csv.filter(r => {
+    candidates.filter(r => {
       if (Number(r.zipcode) !== zipcode) return false;
       if (!city) city = r.city;
       lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };

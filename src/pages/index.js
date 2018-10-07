@@ -60,6 +60,9 @@ class HomePage extends React.Component {
               color="violet"
               onClick={() => this.goto('/contribuer')}
               >contribuer</Button>
+
+            {/* <h2>Carte interactive des mandats</h2>
+            <a href="/stats"><img src="https://d.pr/free/i/0sPk1G+" style={{width: '100%', maxWidth: '600px' }} /></a> */}
           </div>
           <Footer />
         </div>
