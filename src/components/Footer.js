@@ -30,8 +30,8 @@ class Footer extends React.Component {
         <ul>
           <li><Link href="/"><a title="retour page d'accueil">🏡</a></Link></li>
           <li><a href="https://github.com/xdamman/pourquellelistevoter/issues">🐞 Rapporter une erreur</a></li>
-          <li><Link href="/contribuer"><a>🙌 Contribuer</a></Link></li>
-          <li><Link href="/faq"><a>﹖ FAQ</a></Link></li>
+          <li><Link prefetch href="/contribuer"><a>🙌 Contribuer</a></Link></li>
+          <li><Link prefetch href="/faq"><a>﹖ FAQ</a></Link></li>
           <li><a href="https://listescitoyennes.be">🇧🇪 listescitoyennes.be</a></li>
           <li><a href="https://facebook.com/listescitoyennesbelgique">🌏 Page Facebook</a></li>
           <li><a href="https://opencollective.com/listescitoyennes">💶 Faire un don</a></li>
