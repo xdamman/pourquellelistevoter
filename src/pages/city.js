@@ -50,7 +50,7 @@ class CityPage extends React.Component {
             { recommendations.length > 0 &&
               <div className="recommendation">
                 <div className="emoji">🎉</div>
-                <p>Il y a {recommendations.length} {plural(recommendations.length, 'liste citoyenne', 'listes citoyennes')} dans votre ville qui {plural(recommendations.length, 'limite', 'limitent')} avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
+                <p>Il y a {recommendations.length} {plural(recommendations.length, 'liste citoyenne', 'listes citoyennes')} dans votre ville qui {plural(recommendations.length, 'milite', 'militent')} avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
                 { recommendations.map(recommendation => <ListSummary listname={recommendation.name} lists={lists} city={city} />) }
               </div>
             }

@@ -49,7 +49,7 @@ class ListPage extends React.Component {
         { recommendation &&
           <div className="recommendation">
             <div className="emoji">🎉</div>
-            <p><b>{list.name}</b> est une liste citoyenne qui limite avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
+            <p><b>{list.name}</b> est une liste citoyenne qui milite avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
           </div>
         }
 
