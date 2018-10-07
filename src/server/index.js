@@ -66,6 +66,7 @@ nextApp.prepare().then(() => {
   server.get('/api/data/:csvfile', api.getDataFromCSV);
 
   server.get('/villes/:city', async (req, res, next) => {
+    res.setHeader('Cache-Control', `public, max-age=${60 * 15}`); // cache for 15mn
     const city = req.params.city.toLowerCase();
     console.log(">>> getting candidates for", city);
     const csv = await api.getJSONFromCSVFile('candidates_with_cumuleo');
@@ -107,6 +108,7 @@ nextApp.prepare().then(() => {
   });
 
   server.get('/villes/:city/:listname', async (req, res, next) => {
+    res.setHeader('Cache-Control', `public, max-age=${60 * 15}`); // cache for 15mn
     const city = req.params.city.toLowerCase();
     const listname = req.params.listname.toLowerCase();
     console.log(">>> getting candidates for", city, listname);
@@ -159,6 +161,7 @@ nextApp.prepare().then(() => {
   });
 
   server.get('/:zipcode', async (req, res, next) => {
+    res.setHeader('Cache-Control', `public, max-age=${60 * 15}`); // cache for 15mn
     let zipcode = Number(req.params.zipcode);
     if ([1020,1120,1130].includes(zipcode)) {
       zipcode = 1000;

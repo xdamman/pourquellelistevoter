@@ -7,6 +7,13 @@ import Footer from '../components/Footer';
 
 class HomePage extends React.Component {
 
+  static getInitialProps({ req, res, query }) {
+    if (res) {
+      res.setHeader('Cache-Control', `s-maxage=${60*15}`);
+    }
+    return { query };
+  }
+
   constructor(props) {
     super(props);
     this.state = { zipcode: null };

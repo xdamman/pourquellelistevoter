@@ -7,8 +7,11 @@ import Footer from '../components/Footer';
 
 class CityPage extends React.Component {
 
-    static getInitialProps({ req, query }) {
-        return { query, data: req && req.data };
+    static getInitialProps({ req, res, query }) {
+      if (res) {
+        res.setHeader('Cache-Control', `s-maxage=${60*15}`);
+      }
+      return { query, data: req && req.data };
     }
 
     constructor(props) {

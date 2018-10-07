@@ -7,7 +7,10 @@ import Footer from '../components/Footer';
 
 class ListPage extends React.Component {
 
-  static getInitialProps({ req, query }) {
+  static getInitialProps({ req, res, query }) {
+    if (res) {
+      res.setHeader('Cache-Control', `s-maxage=${60*15}`);
+    }
     return { query, data: req && req.data };
   }
 
