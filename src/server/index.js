@@ -12,6 +12,7 @@ import logger from '../logger';
 import { titleCase } from '../lib/utils';
 import { registerToNewsletter } from '../lib/mailchimp';
 import listsData from '../../data/lists.json';
+import citiesData from '../../data/cities.json';
 
 const {
   PORT,
@@ -31,6 +32,8 @@ const inc = (obj, key, increment = 1) => {
   obj[key] = obj[key] || 0;
   obj[key] += increment;
 }
+
+const getCityInfo = (zipcode) => citiesData.find(city => (Number(city.zipcode) === Number(zipcode)));
 
 const getListInfo = (listname, zipcode) => {
   if (!listname) return;
@@ -99,8 +102,11 @@ nextApp.prepare().then(() => {
       return true;
     });
     req.data = {
-      city: titleCase(city),
-      zipcode,
+      city: {
+        name: titleCase(city),
+        zipcode,
+        ...getCityInfo(zipcode)
+      },
       lists
     };
     console.log(">>> data", req.data);
@@ -118,6 +124,7 @@ nextApp.prepare().then(() => {
     const candidates = csv.filter(r => {
       if (r.city.toLowerCase() !== city) return false;
       if (r.list.toLowerCase() !== listname) return false;
+      if (!list.zipcode) list.zipcode = r.zipcode;
       if (r.cumuleo_url) {
         inc(stats, 'totalPoliticians');
         inc(stats, 'totalCumuls', parseInt(r.cumuls_2017));
@@ -142,11 +149,14 @@ nextApp.prepare().then(() => {
     })
     list.info = getListInfo(listname, list.zipcode);
     req.data = {
-      city: titleCase(city),
+      city: {
+        name: titleCase(city),
+        zipcode: list.zipcode,
+        ...getCityInfo(list.zipcode)
+      },
       list,
       stats
     };
-    console.log(">>> data.stats", req.data.stats);
     next();
   });
 
@@ -175,7 +185,7 @@ nextApp.prepare().then(() => {
     const lists = {};
     let city;
     const candidates = csv.filter(r => {
-      if (Number(r.zipcode) !== zipcode) return false;
+      if (Math.floor(Number(r.zipcode)/10) !== Math.floor(Number(zipcode)/10)) return false;
       if (!city) city = r.city;
       lists[r.list] = lists[r.list] || { candidates: [], totalPoliticians: 0, totalCumuls: 0, totalYearsInPolitics: 0 };
       lists[r.list].candidates.push(r);
@@ -197,8 +207,11 @@ nextApp.prepare().then(() => {
       return true;
     });
     req.data = {
-      city: titleCase(city),
-      zipcode,
+      city: {
+        zipcode,
+        name: titleCase(city),
+        ...getCityInfo(zipcode)
+      },
       lists
     };
     // console.log(">>> data", req.data);

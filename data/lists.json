@@ -103,6 +103,13 @@
     "facebook": "https://www.facebook.com/cumlupis"
   },
   {
+    "sigle": "act",
+    "name": "ACT - Active Citizens Together",
+    "description": "Mouvement Citoyen Molenbeekois, créé pour apporter des solutions concrètes aux problématiques économiques, sociales et politique de notre commune.",
+    "website": "https://www.act.city",
+    "video": "https://www.youtube.com/watch?v=nOmOX8ybKUo"
+  },
+  {
     "sigle": "plan b",
     "program": "process",
     "video": "https://youtu.be/oCuwVgVArBM",
@@ -114,7 +121,7 @@
     "citizenlist": true,
     "sortition": true,
     "process": true
-  }
+  },
   {
     "sigle": "Alternative humaniste",
     "zipcode": 1081,
@@ -123,8 +130,8 @@
     "description": "70% n’ont aucune appartenance politique",
     "website": "http://alternativehumaniste.be",
     "facebook": "https://www.facebook.com/Alternative-humaniste-419152078562877/",
-    "citizenlist": true,
-  }
+    "citizenlist": true
+  },
   {
     "sigle": "Intérêts Citoyens",
     "zipcode": 5570,
@@ -133,8 +140,8 @@
     "description": "« Intérêt Citoyen », a vu le jour à Braine-l’Alleud, et se dit emblématique d’une nouvelle culture politique, assainie et réaliste, qui tourne le dos à la particratie traditionnelle en privilégiant l’écoute citoyenne et la culture des convergences d’opinons.",
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
-    "citizenlist": true,
-  }
+    "citizenlist": true
+  },
   {
     "sigle": "Intérêts Citoyens",
     "zipcode": 1490,
@@ -143,8 +150,8 @@
     "description": "« Intérêt Citoyen », a vu le jour à Braine-l’Alleud, et se dit emblématique d’une nouvelle culture politique, assainie et réaliste, qui tourne le dos à la particratie traditionnelle en privilégiant l’écoute citoyenne et la culture des convergences d’opinons.",
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
-    "citizenlist": true,
-  }
+    "citizenlist": true
+  },
   {
    "sigle": "Intérêts Citoyens",
     "zipcode": 6470,
@@ -153,8 +160,8 @@
     "description": "« Intérêt Citoyen », a vu le jour à Braine-l’Alleud, et se dit emblématique d’une nouvelle culture politique, assainie et réaliste, qui tourne le dos à la particratie traditionnelle en privilégiant l’écoute citoyenne et la culture des convergences d’opinons.",
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
    {
    "sigle": "Intérêts Citoyens",
     "zipcode": 4680,
@@ -163,8 +170,8 @@
     "description": "« Intérêt Citoyen », a vu le jour à Braine-l’Alleud, et se dit emblématique d’une nouvelle culture politique, assainie et réaliste, qui tourne le dos à la particratie traditionnelle en privilégiant l’écoute citoyenne et la culture des convergences d’opinons.",
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
   {
    "sigle": "Intérêts Citoyens",
     "zipcode": 1300,
@@ -173,8 +180,8 @@
     "description": "« Intérêt Citoyen », a vu le jour à Braine-l’Alleud, et se dit emblématique d’une nouvelle culture politique, assainie et réaliste, qui tourne le dos à la particratie traditionnelle en privilégiant l’écoute citoyenne et la culture des convergences d’opinons.",
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
    {
    "sigle": "Intérêts Citoyens",
     "zipcode": 6000,
@@ -183,58 +190,58 @@
     "description": "« Intérêt Citoyen », a vu le jour à Braine-l’Alleud, et se dit emblématique d’une nouvelle culture politique, assainie et réaliste, qui tourne le dos à la particratie traditionnelle en privilégiant l’écoute citoyenne et la culture des convergences d’opinons.",
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
   {
    "sigle": "Ramillies en Marche",
     "zipcode": 1367,
     "program": "program",
     "facebook": "https://www.facebook.com/ramilliesenmarche",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
   {
-   "sigle": "Demain Mont-Saint Guibert",
+    "sigle": "Demain Mont-Saint Guibert",
     "zipcode": 1435,
     "program": "program",
-    "description": "Ils se décrivent comme des femmes et des hommes, libres, créatifs, dynamiques, indépendants des partis politiques. Attachés à l'éthique, engagés pour leurs villages, mobilisés pour la planète, avec des projets concrets, innovants, participatifs et réalisables.
+    "description": "Ils se décrivent comme des femmes et des hommes, libres, créatifs, dynamiques, indépendants des partis politiques. Attachés à l'éthique, engagés pour leurs villages, mobilisés pour la planète, avec des projets concrets, innovants, participatifs et réalisables.",
     "website": "https://www.lalistecitoyenne.be/",
     "facebook": "https://www.facebook.com/demainMSG/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
   { "sigle": "Liste du Progrès",
     "zipcode": 4920,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=iyqy5t6G8nE",
     "website": "http://www.progres2018.be/",
     "facebook": "https://www.facebook.com/progres2018.be/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
   {
    "sigle": "M+",
     "zipcode": 7140,
     "facebook": "https://www.facebook.com/mplusmlz/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
   {
     "sigle": "Mouvement Citoyen Sprimont",
     "zipcode": 4140,
     "program": "program",
     "website": "https://www.mcsprimont.com/",
     "facebook": "https://www.facebook.com/mcsprimont2017",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
     { "sigle": "Alternative Citoyenne de Momignies",
     "zipcode": 6590,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=iyqy5t6G8nE",
     "website": "http://alternativecitoyenne-momignies.be/",
-    "citizenlist": true,
-   }
+    "citizenlist": true
+   },
   {
     "sigle": "Osez OC",
     "zipcode": 6970,
     "program": "program",
     "facebook": "https://www.facebook.com/OsezOC/",
-    "citizenlist": true,
+    "citizenlist": true
    }
 ]

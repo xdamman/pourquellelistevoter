@@ -4,6 +4,7 @@ import Head from 'next/head';
 import ReactPlayer from 'react-player'
 import ListWarnings from '../components/ListWarnings';
 import Footer from '../components/Footer';
+import { get } from 'lodash';
 
 class ListPage extends React.Component {
 
@@ -39,10 +40,10 @@ class ListPage extends React.Component {
     return (
       <div className="content">
         <Head>
-          <title>Pour qui voter à {city}? A propos de la liste {list.name.toUpperCase()}...</title>
+          <title>Pour qui voter à {city.name}? A propos de la liste {list.name.toUpperCase()}...</title>
         </Head>
-        <h1>Pour qui voter à {city}?</h1>
-        <h2>A propos de la liste {list.name.toUpperCase()}</h2>
+        <h1>Pour qui voter à {city.name}?</h1>
+        <h2>A propos de la liste {get(list, 'info.name', list.name.toUpperCase())}</h2>
         { list.info &&
           <ul className="links">
             { list.info.website && <li><a href={list.info.website}>{list.info.website}</a></li>}
@@ -57,7 +58,9 @@ class ListPage extends React.Component {
             <p><b>{list.name}</b> est une liste citoyenne qui milite avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
           </div>
         }
-
+        { get(list, 'info.description') &&
+          <p>{list.info.description}</p>
+        }
         <p>
           { stats.totalPoliticians ? <div>Au moins {stats.totalPoliticians} sont des politiciens appartenant au {Object.keys(stats.parties).join(', ')}.</div> : '' }
           { (stats.totalCumuls || stats.totalYearsInPolitics) ? <div>Ensemble, ils cumulent plus de {stats.totalCumuls} mandats et ont déjà passé plus de {stats.totalYearsInPolitics} années en politique.</div> : '' }
@@ -97,7 +100,7 @@ class ListPage extends React.Component {
           </ul>
         </div>
         <p><br />
-          <Link href={`/villes/${city}`}><a>Voir les autres listes à {city}</a></Link>
+          <Link href={`/villes/${city.name}`}><a>Voir les autres listes à {city.name}</a></Link>
         </p>
         <p>
           Pour rajouter des informations à propos de cette liste, veuillez consulter la page sur <Link href="/contribuer"><a>comment contribuer</a></Link>.
