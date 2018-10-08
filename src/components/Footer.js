@@ -25,7 +25,12 @@ class Footer extends React.Component {
           }
           li {
             display: inline-block;
-            margin: 0 0.5rem;
+            margin: 0.5rem;
+          }
+          @media(max-width: 400px) {
+            li {
+              display: block;
+            }
           }
         `}</style>
         <ul>

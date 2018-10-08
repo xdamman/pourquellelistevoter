@@ -23,7 +23,7 @@ class ListWarnings extends React.Component {
         }
         { list.info.year_established < 2000 &&
         <p>⚠️ Cette liste émane d'un parti politique du {Math.ceil(list.info.year_established/100)}e siècle. Il a été créé en {list.info.year_established} (il y a {year - list.info.year_established} ans!).
-        A ce moment, il n'y avait pas d'Internet. Ce n'est donc pas dans leur ADN de partager l'information et de permettre à tout le monde de collaborer.</p>
+        A ce moment, il n'y avait pas d'Internet. Ce n'est donc pas dans leur ADN de partager l'information et de permettre à tout le monde de collaborer. <a href="/faq#vieuxpartis">(plus d'info)</a></p>
         }
         { list.info.particracy &&
           <p>⚠️ En votant pour n'importe quel candidat de cette liste, vous votez également pour la <a href="https://fr.wikipedia.org/wiki/Particratie">particratie</a>.</p>
