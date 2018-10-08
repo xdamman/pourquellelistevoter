@@ -60,7 +60,10 @@ export default class MyDocument extends Document {
             td.unknown {
               color: rgba(0, 0, 0, 0.2);
             }
-
+            section {
+              margin: 2rem 0;
+            }
+ 
             .video {
               position: relative;
               padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */

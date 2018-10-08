@@ -39,11 +39,6 @@ class ListPage extends React.Component {
     }
     return (
       <div className="content">
-        <style jsx>{`
-           section {
-             margin: 2rem 0;
-           }
-        `}</style>
         <Head>
           <title>Pour qui voter à {city.name}? A propos de la liste {list.name.toUpperCase()}...</title>
         </Head>
