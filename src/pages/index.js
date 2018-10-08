@@ -63,15 +63,8 @@ class HomePage extends React.Component {
             </section>
 
             <section>
-              <h2>Petit mot d'explication</h2>
-              <div className="video">
-                <ReactPlayer url="https://youtu.be/uxMvLWpD7wk" className="player" width='320' height='240' />
-              </div>
-            </section>
-
-            <section>
               <h2>Contribuer</h2>
-              <p>Ceci est un projet open source. Rejoignez-nous!</p>
+              <p>Ceci est un projet open source. Contribuez!</p>
               <Button
                 basic
                 color="violet"
