@@ -92,7 +92,8 @@
     "program": "process",
     "facebook": "https://www.facebook.com/CollectifKayoux",
     "twitter": "https://twitter.com/KayouxBE",
-    "video": "https://www.youtube.com/channel/UCDFfSQYxCHsk9exf3T_M4QA"
+    "video": "https://www.youtube.com/channel/UCDFfSQYxCHsk9exf3T_M4QA",
+    "email": "bonjour@kayoux.be"
   },
   {
     "sigle": "cum lupis",
@@ -243,5 +244,79 @@
     "program": "program",
     "facebook": "https://www.facebook.com/OsezOC/",
     "citizenlist": true
+   },
+   {
+     "sigle": "AD&N",
+     "zipcode": 5300,
+     "program": "process",
+     "facebook": "https://facebook.com/adnandenne",
+     "website": "https://adnandenne.be/",
+     "video": "https://www.youtube.com/channel/UCu2hCeT2nabB-aO20kLrAiQ",
+     "year_established": 2018,
+     "email": "bonjour@adnandenne.be"
+   },
+   {
+     "sigle": "LISTE CITOYENNE 1160",
+     "zipcode": 1160,
+     "program": "process",
+     "facebook": "https://www.facebook.com/listecitoyenne1160",
+     "website": "https://www.listecitoyenne1160.com",
+     "email": "listecitoyenne1160@googlegroups.com",
+     "year_established": 2018
+   },
+   {
+     "sigle": "CHANGEONS !",
+     "zipcode": 6940,
+     "program": "process",
+     "facebook": "https://www.facebook.com/changerchangeons",
+     "website": "https://www.changeons.be",
+     "twitter": "https://twitter.com/changeons_durbu",
+     "year_established": 2018
+   },
+   {
+     "sigle": "Ensemble",
+     "zipcode": 1470,
+     "program": "process",
+     "facebook": "https://www.facebook.com/genappeensemble/",
+     "website": "https://www.genappe-ensemble.be/",
+     "year_established": 2018
+   },
+   {
+     "sigle": "liste des citoyens",
+     "zipcode": 1310,
+     "program": "process",
+     "facebook": "https://www.facebook.com/LCLaHulpe/",
+     "twitter": "https://twitter.com/ListeCitoyen",
+     "website": "https://www.listecitoyen.be",
+     "video": "https://www.youtube.com/watch?v=O9DA8No-9zA",
+     "email": "listecitoyennelh@gmail.com",
+     "year_established": 2018
+   },
+   {
+     "sigle": "CitoyenS",
+     "zipcode": 6760,
+     "program": "process",
+     "facebook": "https://www.facebook.com/citoyensVirton/",
+     "website": "http://citoyens-virton.be/",
+     "year_established": 2018
+   },
+   {
+     "sigle": "LHS",
+     "name": "LHS - Liste des Habitants de Spa",
+     "zipcode": 4900,
+     "program": "process",
+     "facebook": "https://facebook.com/LHSListedesHabitantsdeSpa/",
+     "website": "https://lhs20183.wixsite.com/lhsspa",
+     "email": "Lhs2018@protonmail.com",
+     "year_established": 2017
+   },
+   {
+     "sigle": "Proximité",
+     "zipcode": 1330,
+     "program": "process",
+     "facebook": "https://www.facebook.com/proximiterixensart/",
+     "website": "https://proximiterixensart.be/",
+     "year_established": 2006,
+     "email": "renaudh@gmail.com"
    }
 ]
