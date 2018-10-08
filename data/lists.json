@@ -58,6 +58,11 @@
     "website": "https://partipopulaire.be/"
   },
   {
+    "sigle": "AGIR",
+    "zipcode": 7100,
+    "inclusive": false
+  },
+  {
     "sigle": "N-VA",
     "year_established": 2001,
     "wikipedia": "https://fr.wikipedia.org/wiki/Nieuw-Vlaamse_Alliantie",

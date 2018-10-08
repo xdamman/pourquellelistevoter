@@ -3,5 +3,10 @@
     "zipcode": 1000,
     "name": "Bruxelles",
     "electors_cloud": "https://pourquellelistevoter.be/static/brussels-firstnames-cloud.png"
+  },
+  {
+    "zipcode": 1340,
+    "name": "Ottignies-Louvain-la-Neuve",
+    "electors_cloud": "https://pourquellelistevoter.be/static/olln-firstnames-cloud.png"
   }
 ]
