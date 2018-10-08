@@ -29,7 +29,7 @@ class ListWarnings extends React.Component {
           <p>⚠️ En votant pour n'importe quel candidat de cette liste, vous votez également pour la <a href="https://fr.wikipedia.org/wiki/Particratie">particratie</a>.</p>
         }
         { list.info.inclusive === false &&
-          <p>⚠️ ce parti n'est pas inclusif. Il oppose les habitants de la ville aux uns aux autres. Il refuse d'accepter que tout habitant doit pouvoir participer aux à notre démocratie.</p>
+          <p>⚠️ ce parti n'est pas inclusif. Il oppose les habitants de la ville les uns aux autres. Il refuse d'accepter que tout habitant doit pouvoir participer aux à notre démocratie.</p>
         }
       </div>
     );
