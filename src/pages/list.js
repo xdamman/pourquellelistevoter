@@ -39,6 +39,7 @@ class ListPage extends React.Component {
     if (list.info && list.info.program === 'process') {
       recommendation = list.info;
     }
+    const couldBeACitizenList = !recommendation && ! (get(list, 'info.year_established') < 2000) && !(get(list, 'info.inclusive')===false);
     return (
       <div className="content">
         <Head>
@@ -104,10 +105,10 @@ class ListPage extends React.Component {
         <p><br />
           <Link href={`/villes/${city.name}`}><a>Voir les autres listes à {city.name}</a></Link>
         </p>
-        { !recommendation && ! (get(list, 'info.year_established') < 2000) &&
+        { couldBeACitizenList &&
           <p>👋 Est-ce que cette liste est une liste citoyenne? Si oui, merci de la rajouter en utilisant <a href={`https://docs.google.com/forms/d/e/1FAIpQLScBkngPG2j9BO-WDQCksqJOXALku1ikHHVDMnNDwvovdvhPlg/viewform?usp=pp_url&entry.2096957254=https://pourquellelistevoter.be/villes/${city.name}/${list.name}+&entry.804413786=${city.zipcode}&entry.1851737445=${list.name}&entry.871124266=${this.year}`}>ce formulaire</a>.</p>
         }
-        { recommendation || (get(list, 'info.year_established') < 2000) &&
+        { !couldBeACitizenList &&
           <p>
             Pour rajouter des informations à propos de cette liste, veuillez consulter la page sur <Link href="/contribuer"><a>comment contribuer</a></Link>.
           </p>
