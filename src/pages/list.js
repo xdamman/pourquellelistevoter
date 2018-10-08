@@ -59,7 +59,7 @@ class ListPage extends React.Component {
           </div>
         }
         { get(list, 'info.description') &&
-          <p>{list.info.description}</p>
+          <section><p>{list.info.description}</p></section>
         }
         <p>
           { stats.totalPoliticians ? <div>Au moins {stats.totalPoliticians} sont des politiciens appartenant au {Object.keys(stats.parties).join(', ')}.</div> : '' }

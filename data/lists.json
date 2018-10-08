@@ -91,6 +91,17 @@
     "email": "contact@locale-olln.be"
   },
   {
+    "sigle": "EC",
+    "name": "Eveil Citoyen Manage",
+    "zipcode": 7170,
+    "established_year": 2018,
+    "program": "process",
+    "facebook": "https://www.facebook.com/ECMANAGE2018/",
+    "website": "http://www.ecmanage2018.be",
+    "email": "ecmanage2018@gmail.com",
+    "description": "EC Manage 2018 (Eveil Citoyen) tente d'apporter une solution pacifique a la révolution requise par la population en terme d'équité et de justice sociale. Je prône la participation des citoyens au niveau Local et a terme une réécriture du la constitution afin de remplacer pacifiquement le démocratie représentative par une démocratie participative."
+  },
+  {
     "sigle": "kayoux",
     "zipcode": 1348,
     "established_year": 2017,
