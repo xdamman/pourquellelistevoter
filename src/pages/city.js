@@ -53,6 +53,7 @@ class CityPage extends React.Component {
             <div className="emoji">😔</div>
             <p>Il n'y a malheureusement pas (encore) de liste citoyenne dans votre commune qui milite non pas pour un programme mais avant tout pour une nouvelle façon d'inclure tous les citoyens dans les prises de décisions politiques.</p>
             <p>Si vous voulez créer ou soutenir la création d'une liste citoyenne dans votre commune, <a href={`https://docs.google.com/forms/d/e/1FAIpQLSf_c5tsGZewUwH4ylwZLBmi2n1Zh6eJ99BUsP4HlnI3yn2VAw/viewform?entry.49500494=${zipcode}`}>faites-le nous savoir ici</a>.</p>
+            <p>Si vous faites partie d'une liste citoyenne ci-dessous et qu'elle n'est pas encore reconnue en tant que telle, cliquez dessus et en bas de la page cliquez sur "rajouter en tant que liste citoyenne".</p>
           </div>
         }
         { this.recommendations.length > 0 &&

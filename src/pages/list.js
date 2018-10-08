@@ -18,6 +18,8 @@ class ListPage extends React.Component {
   constructor(props) {
       super(props);
       this.data = props.data;
+      const d = new Date;
+      this.year = d.getFullYear();
   }
 
   render() {
@@ -102,9 +104,14 @@ class ListPage extends React.Component {
         <p><br />
           <Link href={`/villes/${city.name}`}><a>Voir les autres listes à {city.name}</a></Link>
         </p>
-        <p>
-          Pour rajouter des informations à propos de cette liste, veuillez consulter la page sur <Link href="/contribuer"><a>comment contribuer</a></Link>.
-        </p>
+        { !recommendation && ! (get(list, 'info.year_established') < 2000) &&
+          <p>👋 Est-ce que cette liste est une liste citoyenne? Si oui, merci de la rajouter en utilisant <a href={`https://docs.google.com/forms/d/e/1FAIpQLScBkngPG2j9BO-WDQCksqJOXALku1ikHHVDMnNDwvovdvhPlg/viewform?usp=pp_url&entry.2096957254=https://pourquellelistevoter.be/villes/${city.name}/${list.name}+&entry.804413786=${city.zipcode}&entry.1851737445=${list.name}&entry.871124266=${this.year}`}>ce formulaire</a>.</p>
+        }
+        { recommendation || (get(list, 'info.year_established') < 2000) &&
+          <p>
+            Pour rajouter des informations à propos de cette liste, veuillez consulter la page sur <Link href="/contribuer"><a>comment contribuer</a></Link>.
+          </p>
+        }
         <Footer />
       </div>
     )

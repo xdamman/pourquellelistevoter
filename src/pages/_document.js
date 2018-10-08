@@ -48,7 +48,7 @@ export default class MyDocument extends Document {
               background-color: #d1ecf1;
               border-color: #bee5eb;
             }
-            .recommendation p {
+            .recommendation p:first-of-type {
               margin-top: 2rem;
             }
             .emoji {
