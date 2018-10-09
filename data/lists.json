@@ -298,6 +298,17 @@
      "year_established": 2018
    },
    {
+     "sigle": "vega",
+     "zipcode": 6000,
+     "description": "La Coopérative Vega est une initiative citoyenne créée en 2012 et qui, lors de sa première participation aux élections communales, est parvenue à obtenir un siège de conseiller communal pour Liège. Elle lutte depuis 2012 pour une approche transparente de la politique. La liste est ouverte et les dépenses électorales sont publiées sur le site internet de la coopérative.",
+     "program": "program",
+     "facebook": "https://www.facebook.com/vega.liege/",
+     "website": "https://www.vega.coop",
+     "video": "https://www.youtube.com/watch?v=LKJtp9LzUDc",
+     "year_established": 2012,
+     "email": "sam@vega.coop"
+   },
+   {
      "sigle": "liste des citoyens",
      "zipcode": 1310,
      "program": "process",
