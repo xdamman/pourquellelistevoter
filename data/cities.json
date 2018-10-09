@@ -4,7 +4,7 @@
     "name": "Bruxelles",
     "electors_cloud": "https://pourquellelistevoter.be/static/brussels-firstnames-cloud.png",
     "age_pyramid": {
-      "image": "http://localhost:3000/static/brussels-age-pyramid.png",
+      "image": "https://pourquellelistevoter.be/static/brussels-age-pyramid.png",
       "caption": "44,17% ont moins de 40 ans"
     }
   },

@@ -66,17 +66,17 @@ class CityPage extends React.Component {
             { this.recommendations.map((recommendation, index) => <ListSummary list={recommendation} city={city} key={index} />) }
           </div>
         }
-        { city.electors_cloud && 
-          <div className="graph">
-            <h3>Nuage des prénoms des électeurs qui peuvent voter à {city.name}</h3>
-            <a href={city.electors_cloud} title="voir le cloud des prénoms des électeurs en grand"><img src={city.electors_cloud} style={{ width: '100%' }} /></a>
-          </div>
-        }
         { city.age_pyramid && 
           <div className="graph">
             <h3>Pyramide des âges à {city.name}</h3>
             <h4>{city.age_pyramid.caption}</h4>
             <a href={city.age_pyramid.image} title="voir la pyramide des âges des électeurs en grand"><img src={city.age_pyramid.image} style={{ width: '100%' }} /></a>
+          </div>
+        }
+        { city.electors_cloud && 
+          <div className="graph">
+            <h3>Nuage des prénoms des électeurs qui peuvent voter à {city.name}</h3>
+            <a href={city.electors_cloud} title="voir le cloud des prénoms des électeurs en grand"><img src={city.electors_cloud} style={{ width: '100%' }} /></a>
           </div>
         }
         <h2>{totalLists} listes (par ordre alphabétique)</h2>
