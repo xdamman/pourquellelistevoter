@@ -100,8 +100,12 @@ nextApp.prepare().then(() => {
 
   server.use(express.json());
 
-  server.get('/stats', (req, res) => {
-    res.sendFile(path.resolve(__dirname + '/../pages/stats.html'));
+  server.get('/stats/mandats', (req, res) => {
+    res.sendFile(path.resolve(__dirname + '/../pages/stats/mandats.html'));
+  });
+
+  server.get('/stats/ages', (req, res) => {
+    res.sendFile(path.resolve(__dirname + '/../pages/stats/ages.html'));
   });
 
   server.post('/api/newsletter/register', (req, res) => {

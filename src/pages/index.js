@@ -33,6 +33,11 @@ class HomePage extends React.Component {
     const { firstname } = this.props;
     return (
         <div>
+          <style jsx>{`
+            .cols {
+              display: flex;
+            }
+          `}</style>
           <Head>
             <title>Pour Quelle Liste Voter? (ce 14 octobre 2018 aux élections communales en Belgique)</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -58,8 +63,17 @@ class HomePage extends React.Component {
             </section>
 
             <section>
-              <h2>Carte interactive des mandats</h2>
-              <a href="/stats"><img src="https://d.pr/free/i/0sPk1G+" style={{width: '100%', maxWidth: '600px' }} /></a>
+              <h2>Statistiques</h2>
+              <div className="cols">
+                <div className="col">
+                  <h3>Carte interactive des mandats des candidats</h3>
+                  <a href="/stats/mandats"><img src="https://d.pr/free/i/0sPk1G+" style={{width: '100%', maxWidth: '600px' }} /></a>
+                </div>
+                <div className="col">
+                  <h3>Pyramide des âges des électeurs</h3>
+                  <a href="/stats/ages"><img src="/static/age-pyramid.png" style={{width: '100%', maxWidth: '600px' }} /></a>
+                </div>
+              </div>
             </section>
 
             <section>
