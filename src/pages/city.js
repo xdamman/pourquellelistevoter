@@ -41,8 +41,11 @@ class CityPage extends React.Component {
     return (
       <div className="content">
         <style jsx>{`
-          .electorsCloud {
+          .graph {
             margin: 2rem 0 1rem 0;
+          }
+          .graph h4 {
+            margin-top: 0;
           }
         `}</style>
         <Head>
@@ -65,9 +68,16 @@ class CityPage extends React.Component {
           </div>
         }
         { city.electors_cloud && 
-          <div className="electorsCloud">
+          <div className="graph">
             <h3>Nuage des prénoms des électeurs qui peuvent voter à {city.name}</h3>
-            <a href={city.electors_cloud} title="voir le cloud des prénoms des électeurs en grand"><img src={city.electors_cloud} className="electorsCloud" style={{ width: '100%' }} /></a>
+            <a href={city.electors_cloud} title="voir le cloud des prénoms des électeurs en grand"><img src={city.electors_cloud} style={{ width: '100%' }} /></a>
+          </div>
+        }
+        { city.age_pyramid && 
+          <div className="graph">
+            <h3>Pyramide des âges à {city.name}</h3>
+            <h4>{city.age_pyramid.caption}</h4>
+            <a href={city.age_pyramid} title="voir la pyramide des âges des électeurs en grand"><img src={city.age_pyramid.image} style={{ width: '100%' }} /></a>
           </div>
         }
         <h2>{totalLists} listes</h2>
