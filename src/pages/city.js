@@ -59,7 +59,7 @@ class CityPage extends React.Component {
             <p>Si vous faites partie d'une liste citoyenne ci-dessous et qu'elle n'est pas encore reconnue en tant que telle, cliquez dessus et en bas de la page cliquez sur "rajouter en tant que liste citoyenne".</p>
           </div>
         }
-        { this.recommendations.length > 0 &&
+        { false && this.recommendations.length > 0 &&
           <div className="recommendation">
             <div className="emoji">🎉</div>
             <p>Il y a {this.recommendations.length} {plural(this.recommendations.length, 'liste citoyenne', 'listes citoyennes')} dans votre ville qui {plural(this.recommendations.length, 'milite', 'militent')} avant tout pour un nouveau processus démocratique où vous pourrez participer en tant que citoyen!</p>
@@ -79,7 +79,7 @@ class CityPage extends React.Component {
             <a href={city.age_pyramid} title="voir la pyramide des âges des électeurs en grand"><img src={city.age_pyramid.image} style={{ width: '100%' }} /></a>
           </div>
         }
-        <h2>{totalLists} listes</h2>
+        <h2>{totalLists} listes (par ordre alphabétique)</h2>
         { lists.map((list, index) => list && <ListSummary list={list} city={city} key={index} />) }
         <Footer />
       </div>
