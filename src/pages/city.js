@@ -20,8 +20,7 @@ class CityPage extends React.Component {
     this.data = props.data;
     this.recommendations = [];
     this.data.lists.forEach(list => {
-      if (get(list, 'info.program') === 'process' && !get(list, 'totalCumuls') > 0) {
-        console.log(">>> adding", list)
+      if (get(list, 'info.program') === 'process' && Number(get(list, 'totalCumuls')) === 0) {
         this.recommendations.push(list);
       }
     });
