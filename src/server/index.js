@@ -78,7 +78,7 @@ const getListInfo = (listname, zipcode) => {
     }
   }
   
-  for (let i=0; i< partiesData.length; i++) {
+  for (let i=0; i < partiesData.length; i++) {
     const list = partiesData[i];
     if (list.sigle.toLowerCase() === listname.toLowerCase()) {
       return list;
@@ -199,7 +199,7 @@ nextApp.prepare().then(() => {
       }
     })
     list.info = getListInfo(listname, list.zipcode);
-    if (!list.info && listname !== list.party) {
+    if (!list.info && listname !== list.party && list.party) {
       list.info = getListInfo(list.party, list.zipcode);
     }
     req.data = {
