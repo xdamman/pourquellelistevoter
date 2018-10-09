@@ -1,43 +1,5 @@
 [
   {
-    "sigle": "ps",
-    "program": "program",
-    "year_established": 1885,
-    "year_renamed": 1978,
-    "particracy": true,
-    "wikipedia": "https://fr.wikipedia.org/wiki/Parti_socialiste_(Belgique)"
-  },
-  {
-    "sigle": "mr",
-    "program": "program",
-    "year_established": 1846,
-    "year_renamed": 2002,
-    "particracy": true,
-    "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9formateur_(Belgique)"
-  },
-  {
-    "sigle": "cdh",
-    "original_name": "parti catholique",
-    "program": "program",
-    "year_established": 1868,
-    "year_renamed": 2002,
-    "particracy": true,
-    "wikipedia": "https://fr.wikipedia.org/wiki/Centre_d%C3%A9mocrate_humaniste"
-  },
-  {
-    "sigle": "ecolo",
-    "climate_first": true,
-    "year_established": 1980,
-    "wikipedia": "https://en.wikipedia.org/wiki/Ecolo",
-    "program": "program",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ecolo_Logo.svg/654px-Ecolo_Logo.svg.png"
-  },
-  {
-    "sigle": "défi",
-    "original_name": "FDF",
-    "year_established": 1964
-  },
-  {
     "sigle": "citoyens",
     "zipcode": 7000,
     "facebook": "https://www.facebook.com/citoyens.mons/",
@@ -52,26 +14,9 @@
     "program": "process"
   },
   {
-    "sigle": "PP",
-    "year_established": 2009,
-    "inclusive": false,
-    "website": "https://partipopulaire.be/"
-  },
-  {
     "sigle": "AGIR",
     "zipcode": 7100,
     "inclusive": false
-  },
-  {
-    "sigle": "N-VA",
-    "year_established": 2001,
-    "wikipedia": "https://fr.wikipedia.org/wiki/Nieuw-Vlaamse_Alliantie",
-    "inclusive": false
-  },
-  {
-    "sigle": "PTB",
-    "year_established": 1979,
-    "wikipedia": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Belgium"
   },
   {
     "sigle": "citoyen lens",

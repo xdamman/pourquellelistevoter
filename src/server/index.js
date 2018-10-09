@@ -12,6 +12,7 @@ import logger from '../logger';
 import { titleCase } from '../lib/utils';
 import { registerToNewsletter } from '../lib/mailchimp';
 import listsData from '../../data/lists.json';
+import partiesData from '../../data/parties.json';
 import citiesData from '../../data/cities.json';
 
 const {
@@ -70,11 +71,17 @@ const getCityInfo = (zipcode) => citiesData.find(city => (Number(city.zipcode) =
 
 const getListInfo = (listname, zipcode) => {
   if (!listname) return;
-  console.log(">>> getListInfo", listname, typeof zipcode, zipcode);
   for (let i=0; i< listsData.length; i++) {
     const list = listsData[i];
     if (list.sigle.toLowerCase() === listname.toLowerCase()) {
       if (!list.zipcode || Number(list.zipcode) === Number(zipcode)) return list;
+    }
+  }
+  
+  for (let i=0; i< partiesData.length; i++) {
+    const list = partiesData[i];
+    if (list.sigle.toLowerCase() === listname.toLowerCase()) {
+      return list;
     }
     if (listname.toLowerCase().indexOf(list.sigle.toLowerCase()) > -1) {
       return list;
@@ -192,6 +199,9 @@ nextApp.prepare().then(() => {
       }
     })
     list.info = getListInfo(listname, list.zipcode);
+    if (!list.info && listname !== list.party) {
+      list.info = getListInfo(list.party, list.zipcode);
+    }
     req.data = {
       city: {
         name: titleCase(city),
