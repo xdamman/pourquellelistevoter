@@ -256,6 +256,7 @@ nextApp.prepare().then(() => {
     });
     const lists = [];
     for (let listname in listsByName) {
+      listsByName[listname].candidates.sort((a, b) => (parseInt(a.position) > parseInt(b.position) ? 1 : -1));
       lists.push({
         name: listname,
         ...listsByName[listname]

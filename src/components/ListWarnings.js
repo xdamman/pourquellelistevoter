@@ -45,7 +45,7 @@ class ListWarnings extends React.Component {
         { list.info && list.info.program === 'process' &&
         <p>🙋🏻‍ Cette liste ne milite pas pour un programme mais milite avant tout pour un nouveau processus démocratique pour impliquer le citoyen dans les décisions politiques.</p>
         }
-        { list.info && list.info.year_established < 2000 &&
+        { list.info && list.info.year_established &&
         <p>Cette liste émane du { this.renderPartyInfo(list.name) }</p>
         }
         { list.candidates[0].party && list.name.toLowerCase() !== list.candidates[0].party.toLowerCase() &&

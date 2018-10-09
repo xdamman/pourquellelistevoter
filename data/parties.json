@@ -53,6 +53,17 @@
     "inclusive": false
   },
   {
+    "sigle": "VLAAMS BELANG",
+    "year_established": 2004,
+    "wikipedia": "https://en.wikipedia.org/wiki/Vlaams_Belang"
+  },
+  {
+    "sigle": "sp.a",
+    "year_established": 1885,
+    "year_renamed": 1978,
+    "wikipedia": "https://en.wikipedia.org/wiki/Socialistische_Partij_Anders"
+  },
+  {
     "sigle": "PTB",
     "year_established": 1979,
     "wikipedia": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Belgium"
