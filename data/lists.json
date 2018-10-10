@@ -53,6 +53,17 @@
     "facebook": "https://www.facebook.com/nouveauverviers/"
   },
   {
+    "sigle": "nosvotes",
+    "zipcode": 1170,
+    "year_established": 2018,
+    "program": "process",
+    "website": "http://www.nosvotes.be",
+    "email": "info@nosvotes.be",
+    "iban": "BE13 1431 0526 7939",
+    "video": "https://www.youtube.com/watch?v=w4RQTN1y6os",
+    "facebook": "https://www.facebook.com/groups/266293530758017/about/"
+  },
+  {
     "sigle": "EC",
     "name": "Eveil Citoyen Manage",
     "zipcode": 7170,
