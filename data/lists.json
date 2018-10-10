@@ -25,7 +25,7 @@
     "website": "https://www.mouvement-citoyen.eu/",
     "facebook": "https://www.facebook.com/CitoyenLens/"
   },
-  {   
+  {
     "sigle": "locale",
     "zipcode": 1340,
     "year_established": 2018,
@@ -34,6 +34,21 @@
     "facebook": "https://www.facebook.com/localeolln/",
     "twitter": "https://twitter.com/LocaleOlln",
     "email": "contact@locale-olln.be"
+  },
+  {
+    "sigle": "eca",
+    "zipcode": 1430,
+    "year_established": 2018,
+    "description": "C'est une liste citoyennes, pour laquelle chaque citoyen qui le désirait à eu l'occasion d'apporter des points pour le programme. Les 21 candidats on crée ce programme avec la concertation citoyenne. Une liste qui ne veut pas que tout change mais que l'on puisse avancer ensemble avec tout rebecq et ses entitées. Par le dialogue, le respect, la transparence et la concertation de tout les acteurs ... Un retour aux valeurs de bases.",
+    "program": "process",
+    "website": "http://www.ensemblerebecq.be",
+    "email": "commueca@gmail.com"
+  },
+  {
+    "sigle": "nouveau v.",
+    "zipcode": 4800,
+    "year_established": 2018,
+    "program": "process"
   },
   {
     "sigle": "EC",
@@ -115,7 +130,7 @@
     "citizenlist": true
   },
   {
-   "sigle": "Intérêts Citoyens",
+    "sigle": "Intérêts Citoyens",
     "zipcode": 6470,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=DKlHyQwtrfY",
@@ -123,9 +138,9 @@
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
     "citizenlist": true
-   },
-   {
-   "sigle": "Intérêts Citoyens",
+  },
+  {
+    "sigle": "Intérêts Citoyens",
     "zipcode": 4680,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=DKlHyQwtrfY",
@@ -133,9 +148,9 @@
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
     "citizenlist": true
-   },
+  },
   {
-   "sigle": "Intérêts Citoyens",
+    "sigle": "Intérêts Citoyens",
     "zipcode": 1300,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=DKlHyQwtrfY",
@@ -143,9 +158,9 @@
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
     "citizenlist": true
-   },
-   {
-   "sigle": "Intérêts Citoyens",
+  },
+  {
+    "sigle": "Intérêts Citoyens",
     "zipcode": 6000,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=DKlHyQwtrfY",
@@ -153,14 +168,14 @@
     "website": "https://interet-citoyen.be/",
     "facebook": "https://www.facebook.com/interet.citoyen/",
     "citizenlist": true
-   },
+  },
   {
-   "sigle": "Ramillies en Marche",
+    "sigle": "Ramillies en Marche",
     "zipcode": 1367,
     "program": "program",
     "facebook": "https://www.facebook.com/ramilliesenmarche",
     "citizenlist": true
-   },
+  },
   {
     "sigle": "Demain Mont-Saint Guibert",
     "zipcode": 1435,
@@ -169,21 +184,22 @@
     "website": "https://www.lalistecitoyenne.be/",
     "facebook": "https://www.facebook.com/demainMSG/",
     "citizenlist": true
-   },
-  { "sigle": "Liste du Progrès",
+  },
+  {
+    "sigle": "Liste du Progrès",
     "zipcode": 4920,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=iyqy5t6G8nE",
     "website": "http://www.progres2018.be/",
     "facebook": "https://www.facebook.com/progres2018.be/",
     "citizenlist": true
-   },
+  },
   {
-   "sigle": "M+",
+    "sigle": "M+",
     "zipcode": 7140,
     "facebook": "https://www.facebook.com/mplusmlz/",
     "citizenlist": true
-   },
+  },
   {
     "sigle": "Mouvement Citoyen Sprimont",
     "zipcode": 4140,
@@ -191,104 +207,105 @@
     "website": "https://www.mcsprimont.com/",
     "facebook": "https://www.facebook.com/mcsprimont2017",
     "citizenlist": true
-   },
-    { "sigle": "Alternative Citoyenne de Momignies",
+  },
+  {
+    "sigle": "Alternative Citoyenne de Momignies",
     "zipcode": 6590,
     "program": "program",
     "video": "https://www.youtube.com/watch?v=iyqy5t6G8nE",
     "website": "http://alternativecitoyenne-momignies.be/",
     "citizenlist": true
-   },
+  },
   {
     "sigle": "Osez OC",
     "zipcode": 6970,
     "program": "program",
     "facebook": "https://www.facebook.com/OsezOC/",
     "citizenlist": true
-   },
-   {
-     "sigle": "AD&N",
-     "zipcode": 5300,
-     "program": "process",
-     "facebook": "https://facebook.com/adnandenne",
-     "website": "https://adnandenne.be/",
-     "video": "https://www.youtube.com/channel/UCu2hCeT2nabB-aO20kLrAiQ",
-     "year_established": 2018,
-     "email": "bonjour@adnandenne.be"
-   },
-   {
-     "sigle": "LISTE CITOYENNE 1160",
-     "zipcode": 1160,
-     "program": "process",
-     "facebook": "https://www.facebook.com/listecitoyenne1160",
-     "website": "https://www.listecitoyenne1160.com",
-     "email": "listecitoyenne1160@googlegroups.com",
-     "year_established": 2018
-   },
-   {
-     "sigle": "CHANGEONS !",
-     "zipcode": 6940,
-     "program": "process",
-     "facebook": "https://www.facebook.com/changerchangeons",
-     "website": "https://www.changeons.be",
-     "twitter": "https://twitter.com/changeons_durbu",
-     "year_established": 2018
-   },
-   {
-     "sigle": "Ensemble",
-     "zipcode": 1470,
-     "program": "process",
-     "facebook": "https://www.facebook.com/genappeensemble/",
-     "website": "https://www.genappe-ensemble.be/",
-     "year_established": 2018
-   },
-   {
-     "sigle": "vega",
-     "zipcode": 4000,
-     "description": "La Coopérative Vega est une initiative citoyenne créée en 2012 et qui, lors de sa première participation aux élections communales, est parvenue à obtenir un siège de conseiller communal pour Liège. Elle lutte depuis 2012 pour une approche transparente de la politique. La liste est ouverte et les dépenses électorales sont publiées sur le site internet de la coopérative.",
-     "program": "process",
-     "facebook": "https://www.facebook.com/vega.liege/",
-     "website": "https://www.vega.coop",
-     "video": "https://www.youtube.com/watch?v=LKJtp9LzUDc",
-     "year_established": 2012,
-     "email": "sam@vega.coop"
-   },
-   {
-     "sigle": "liste des citoyens",
-     "zipcode": 1310,
-     "program": "process",
-     "facebook": "https://www.facebook.com/LCLaHulpe/",
-     "twitter": "https://twitter.com/ListeCitoyen",
-     "website": "https://www.listecitoyen.be",
-     "video": "https://www.youtube.com/watch?v=O9DA8No-9zA",
-     "email": "listecitoyennelh@gmail.com",
-     "year_established": 2018
-   },
-   {
-     "sigle": "CitoyenS",
-     "zipcode": 6760,
-     "program": "process",
-     "facebook": "https://www.facebook.com/citoyensVirton/",
-     "website": "http://citoyens-virton.be/",
-     "year_established": 2018
-   },
-   {
-     "sigle": "LHS",
-     "name": "LHS - Liste des Habitants de Spa",
-     "zipcode": 4900,
-     "program": "process",
-     "facebook": "https://facebook.com/LHSListedesHabitantsdeSpa/",
-     "website": "https://lhs20183.wixsite.com/lhsspa",
-     "email": "Lhs2018@protonmail.com",
-     "year_established": 2017
-   },
-   {
-     "sigle": "Proximité",
-     "zipcode": 1330,
-     "program": "process",
-     "facebook": "https://www.facebook.com/proximiterixensart/",
-     "website": "https://proximiterixensart.be/",
-     "year_established": 2006,
-     "email": "renaudh@gmail.com"
-   }
+  },
+  {
+    "sigle": "AD&N",
+    "zipcode": 5300,
+    "program": "process",
+    "facebook": "https://facebook.com/adnandenne",
+    "website": "https://adnandenne.be/",
+    "video": "https://www.youtube.com/channel/UCu2hCeT2nabB-aO20kLrAiQ",
+    "year_established": 2018,
+    "email": "bonjour@adnandenne.be"
+  },
+  {
+    "sigle": "LISTE CITOYENNE 1160",
+    "zipcode": 1160,
+    "program": "process",
+    "facebook": "https://www.facebook.com/listecitoyenne1160",
+    "website": "https://www.listecitoyenne1160.com",
+    "email": "listecitoyenne1160@googlegroups.com",
+    "year_established": 2018
+  },
+  {
+    "sigle": "CHANGEONS !",
+    "zipcode": 6940,
+    "program": "process",
+    "facebook": "https://www.facebook.com/changerchangeons",
+    "website": "https://www.changeons.be",
+    "twitter": "https://twitter.com/changeons_durbu",
+    "year_established": 2018
+  },
+  {
+    "sigle": "Ensemble",
+    "zipcode": 1470,
+    "program": "process",
+    "facebook": "https://www.facebook.com/genappeensemble/",
+    "website": "https://www.genappe-ensemble.be/",
+    "year_established": 2018
+  },
+  {
+    "sigle": "vega",
+    "zipcode": 4000,
+    "description": "La Coopérative Vega est une initiative citoyenne créée en 2012 et qui, lors de sa première participation aux élections communales, est parvenue à obtenir un siège de conseiller communal pour Liège. Elle lutte depuis 2012 pour une approche transparente de la politique. La liste est ouverte et les dépenses électorales sont publiées sur le site internet de la coopérative.",
+    "program": "process",
+    "facebook": "https://www.facebook.com/vega.liege/",
+    "website": "https://www.vega.coop",
+    "video": "https://www.youtube.com/watch?v=LKJtp9LzUDc",
+    "year_established": 2012,
+    "email": "sam@vega.coop"
+  },
+  {
+    "sigle": "liste des citoyens",
+    "zipcode": 1310,
+    "program": "process",
+    "facebook": "https://www.facebook.com/LCLaHulpe/",
+    "twitter": "https://twitter.com/ListeCitoyen",
+    "website": "https://www.listecitoyen.be",
+    "video": "https://www.youtube.com/watch?v=O9DA8No-9zA",
+    "email": "listecitoyennelh@gmail.com",
+    "year_established": 2018
+  },
+  {
+    "sigle": "CitoyenS",
+    "zipcode": 6760,
+    "program": "process",
+    "facebook": "https://www.facebook.com/citoyensVirton/",
+    "website": "http://citoyens-virton.be/",
+    "year_established": 2018
+  },
+  {
+    "sigle": "LHS",
+    "name": "LHS - Liste des Habitants de Spa",
+    "zipcode": 4900,
+    "program": "process",
+    "facebook": "https://facebook.com/LHSListedesHabitantsdeSpa/",
+    "website": "https://lhs20183.wixsite.com/lhsspa",
+    "email": "Lhs2018@protonmail.com",
+    "year_established": 2017
+  },
+  {
+    "sigle": "Proximité",
+    "zipcode": 1330,
+    "program": "process",
+    "facebook": "https://www.facebook.com/proximiterixensart/",
+    "website": "https://proximiterixensart.be/",
+    "year_established": 2006,
+    "email": "renaudh@gmail.com"
+  }
 ]

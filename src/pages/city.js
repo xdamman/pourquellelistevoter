@@ -21,7 +21,7 @@ class CityPage extends React.Component {
     this.data.lists.forEach(list => {
       if (
         get(list, "info.program") === "process" &&
-        Number(get(list, "totalCumuls")) === 0
+        Number(get(list, "totalPoliticians")) <= 1
       ) {
         this.recommendations.push(list);
       }
