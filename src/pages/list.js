@@ -9,7 +9,7 @@ import { get } from "lodash";
 class ListPage extends React.Component {
   static getInitialProps({ req, res, query }) {
     if (res) {
-      res.setHeader("Cache-Control", `s-maxage=${60 * 60 * 2}`);
+      res.setHeader("Cache-Control", `s-maxage=${60 * 60 * 24}`);
     }
     return { query, data: req && req.data };
   }

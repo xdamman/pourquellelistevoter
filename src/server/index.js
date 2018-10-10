@@ -116,7 +116,7 @@ nextApp.prepare().then(() => {
   server.get("/api/data/:csvfile", api.getDataFromCSV);
 
   server.get("/villes/:city", async (req, res, next) => {
-    res.setHeader("Cache-Control", `public, max-age=${60 * 60 * 2}`); // cache for 2h
+    res.setHeader("Cache-Control", `public, max-age=${60 * 60 * 24}`); // cache for 24h
     const city = req.params.city.toLowerCase();
     console.log(">>> getting candidates for", city);
     const listsByName = {};
@@ -177,7 +177,7 @@ nextApp.prepare().then(() => {
   });
 
   server.get("/villes/:city/:listname", async (req, res, next) => {
-    res.setHeader("Cache-Control", `public, max-age=${60 * 60 * 2}`); // cache for 2h
+    res.setHeader("Cache-Control", `public, max-age=${60 * 60 * 24}`); // cache for 24h
     const city = req.params.city.toLowerCase();
     const listname = req.params.listname.toLowerCase();
     console.log(">>> getting candidates for", city, listname);
@@ -238,7 +238,7 @@ nextApp.prepare().then(() => {
   });
 
   server.get("/:zipcode", async (req, res, next) => {
-    res.setHeader("Cache-Control", `public, max-age=${60 * 60 * 2}`); // cache for 2h
+    res.setHeader("Cache-Control", `public, max-age=${60 * 60 * 24}`); // cache for 24h
     let zipcode = getCanonicalZipCode(req.params.zipcode);
 
     console.log(">>> getting candidates for", zipcode);
