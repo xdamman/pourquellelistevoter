@@ -151,7 +151,7 @@ const ListSummary = ({ key, list, city }) => (
       }
     `}</style>
     <h3 className="listname">
-      <Link href={`/villes/${city.name}/${list.name}`}>
+      <Link prefetch href={`/villes/${city.name}/${list.name}`}>
         <a>{list.name}</a>
       </Link>
     </h3>
