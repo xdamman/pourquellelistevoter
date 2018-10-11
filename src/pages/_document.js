@@ -1,18 +1,27 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
     return (
       <html>
         <Head>
-          <meta name="viewport" content="width=device-width, user-scalable=no" />
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Rubik" />
+          <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no"
+          />
+          <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Rubik"
+          />
           <style>{`
             body {
               margin: 0;
@@ -42,13 +51,13 @@ export default class MyDocument extends Document {
               margin: 2rem 0;
             }
             .recommendation {
-              margin-top: 2rem;
+              margin: 2rem 0 1rem;
               padding: 1rem;
               color: #0c5460;
               background-color: #d1ecf1;
               border-color: #bee5eb;
             }
-            .recommendation p {
+            .recommendation p:first-of-type {
               margin-top: 2rem;
             }
             .emoji {
@@ -60,7 +69,10 @@ export default class MyDocument extends Document {
             td.unknown {
               color: rgba(0, 0, 0, 0.2);
             }
-
+            section {
+              margin: 2rem 0;
+            }
+ 
             .video {
               position: relative;
               padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
@@ -99,6 +111,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </html>
-    )
+    );
   }
 }

@@ -1,36 +1,95 @@
-import React from 'react';
+import React from "react";
+import parties from "../../data/parties.json";
+import { get } from "lodash";
+
+const getPartyInfo = sigle => {
+  if (!sigle) return;
+  for (let i = 0; i < parties.length; i++) {
+    const list = parties[i];
+    if (list.sigle.toLowerCase() === sigle.toLowerCase()) {
+      return list;
+    }
+    if (sigle.toLowerCase().indexOf(list.sigle.toLowerCase()) > -1) {
+      return list;
+    }
+  }
+  return null;
+};
 
 class ListWarnings extends React.Component {
-
   constructor(props) {
-      super(props);
+    super(props);
+  }
+
+  renderPartyInfo(info) {
+    if (!info) {
+      console.log(">>> no info found for", sigle, "among", parties);
+      return;
+    }
+    const d = new Date();
+    const year = d.getFullYear();
+    const wikipedia = info.wikipedia ? (
+      <a href={info.wikipedia}>(wikipedia)</a>
+    ) : (
+      ""
+    );
+    let originalName = info.original_name || info.sigle;
+    if (originalName.length < 5) {
+      originalName = originalName.toUpperCase();
+    }
+    return (
+      <span>
+        <b>{originalName}</b>, créé en {info.year_established} (il y a{" "}
+        {year - info.year_established} ans) {wikipedia}.
+      </span>
+    );
   }
 
   render() {
     const { list } = this.props;
-    if (!list || !list.info) return (<div />);
-    const d = new Date;
-    const year = d.getFullYear();
-
+    if (!list) return <div />;
+    console.log("show list", list);
+    const partyInfoFromList = getPartyInfo(list.name);
+    const partyInfoFromTopCandidate = getPartyInfo(
+      get(list, "candidates[0].party")
+    );
     return (
       <div className="ListWarnings">
-        { list.info.program === 'process' &&
-        <p>✅ Cette liste milite avant tout pour un nouveau processus démocratique pour impliquer le citoyen dans les décisions politiques.
-          En votant pour cette liste, vous ne devrez pas attendre 2024 ou descendre dans la rue pour faire entendre votre voix!</p>
-        }
-        { list.info.climate_first &&
-        <p>✅ Cette liste milite avant tout pour prendre des mesures contre le réchauffement climatique 🌍 🌱</p>
-        }
-        { list.info.year_established < 2000 &&
-        <p>⚠️ Cette liste émane d'un parti politique du {Math.ceil(list.info.year_established/100)}e siècle. Il a été créé en {list.info.year_established} (il y a {year - list.info.year_established} ans!).
-        A ce moment, il n'y avait pas d'Internet. Ce n'est donc pas dans leur ADN de partager l'information et de permettre à tout le monde de collaborer.</p>
-        }
-        { list.info.particracy &&
-          <p>⚠️ En votant pour n'importe quel candidat de cette liste, vous votez également pour la <a href="https://fr.wikipedia.org/wiki/Particratie">particratie</a>.</p>
-        }
-        { list.info.inclusive === false &&
-          <p>⚠️ ce parti n'est pas inclusif. Il oppose les habitants de la ville aux uns aux autres. Il refuse d'accepter que tout habitant doit pouvoir participer aux à notre démocratie.</p>
-        }
+        {list.info &&
+          list.info.program === "process" && (
+            <p>
+              🙋🏻‍ Cette liste ne milite pas pour un programme mais milite avant
+              tout pour un nouveau processus démocratique pour impliquer le
+              citoyen dans les décisions politiques.
+            </p>
+          )}
+        {list.info &&
+          list.info.year_established &&
+          partyInfoFromList && (
+            <p>
+              Cette liste émane du {this.renderPartyInfo(partyInfoFromList)}
+            </p>
+          )}
+        {list.candidates[0].party &&
+          list.name.toLowerCase() !== list.candidates[0].party.toLowerCase() &&
+          partyInfoFromTopCandidate && (
+            <div>
+              <p>
+                Cette liste est tirée par un.e membre du parti{" "}
+                <b>{list.candidates[0].party}</b>
+                &nbsp; ({this.renderPartyInfo(partyInfoFromTopCandidate)})
+              </p>
+            </div>
+          )}
+        {false &&
+          list.info &&
+          list.info.inclusive === false && (
+            <p>
+              ⚠️ ce parti n'est pas inclusif. Il oppose les habitants de la
+              ville les uns aux autres. Il refuse d'accepter que tout habitant
+              doit pouvoir participer aux à notre démocratie.
+            </p>
+          )}
       </div>
     );
   }

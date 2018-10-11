@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Pour Quelle Liste Voter? - villes les plus atteintes de particratyte aigüe 🤒</title>
+  <title>Pour Quelle Liste Voter? - carte interactive de la particratie</title>
   <meta name="description" content="Découvrez avec cette carte interactive de Belgique les villes les plus atteintes de particratyte aigüe" />
   <meta property="og:image" content="https://pourquellelistevoter.be/static/stats.small.jpg">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>
@@ -18,7 +18,7 @@
     .tableau {
       max-width: 1400px;
       margin: 0 auto;
-      height: 1500px;
+      height: 1450px;
     }
     .Footer {
       margin: 3rem 0 1rem 0;
@@ -39,7 +39,9 @@
 <body>
   <div class="content">
     <h1>Pour Quelle Liste Voter?</h1>
-    <h2>Ce 14 octobre 2018 guérissons la Belgique de sa particratyte aigüe! 🤒</h2>
+    <h2>Carte interactive de la <a href="https://fr.wikipedia.org/wiki/Particratie">particratie</a></h2>
+    <p>Au plus la couleur est foncée, au plus il y a des candidats avec de nombreux mandats politiques.</p>
+    <p>Pour savoir pour quelle liste voter, entrez votre code postal sur <a href="https://pourquellelistevoter.be">pourquellelistevoter.be</a>.</p>
   </div>
   <div class="tableau">
     <div class='tableauPlaceholder' id='viz1538942860854' style='width: 100%; height: 100%; position: relative'>
@@ -67,13 +69,20 @@
     <script type='text/javascript'>
         var divElement = document.getElementById('viz1538942860854');
         var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width='100%';vizElement.style.height='1500px';
+        vizElement.style.width='100%';vizElement.style.height='1450px';
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
   </div>
   <div class="content">
+    <div id="footnote">
+      <b>Notes:</b><br />
+      <ul>
+        <li>Tous les mandats ne sont pas égaux. Certains sont rémunérés, d'autres pas. Certains demandent plus de temps que d'autres. Cliquez sur le lien pour voir plus d'informations sur ces mandats sur le site Cumuleo.be</li>
+        <li>Les "années en politiques" ne représentent que les années où le mandataire a exercé, depuis 2004, un ou plusieurs mandats soumis à l'obligation de déclaration envers la Cour des comptes (les mandats de conseiller communal, provincial et de CPAS ne sont donc pas inclus).</li>
+      </ul>
+    </div>
     <div class="Footer">
       <ul>
         <li><a title="retour page d'accueil" href="/">🏡</a></li>
@@ -85,5 +94,6 @@
         <li><a href="https://opencollective.com/listescitoyennes">💶 Faire un don</a></li>
       </ul>
     </div>
+
   </div>
 </html>

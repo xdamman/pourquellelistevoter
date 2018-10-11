@@ -1,0 +1,72 @@
+[
+  {
+    "sigle": "ps",
+    "original_name": "Parti Socialiste",
+    "program": "program",
+    "year_established": 1885,
+    "year_renamed": 1978,
+    "particracy": true,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Parti_socialiste_(Belgique)"
+  },
+  {
+    "sigle": "mr",
+    "original_name": "Parti Libéral",
+    "program": "program",
+    "year_established": 1846,
+    "year_renamed": 2002,
+    "particracy": true,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral"
+  },
+  {
+    "sigle": "cdh",
+    "original_name": "Parti Catholique",
+    "program": "program",
+    "year_established": 1868,
+    "year_renamed": 2002,
+    "particracy": true,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Centre_d%C3%A9mocrate_humaniste"
+  },
+  {
+    "sigle": "ecolo",
+    "original_name": "Parti Écolo",
+    "climate_first": true,
+    "year_established": 1980,
+    "wikipedia": "https://en.wikipedia.org/wiki/Ecolo",
+    "program": "program",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ecolo_Logo.svg/654px-Ecolo_Logo.svg.png"
+  },
+  {
+    "sigle": "défi",
+    "original_name": "FDF",
+    "year_established": 1964
+  },
+  {
+    "sigle": "PP",
+    "year_established": 2009,
+    "inclusive": false,
+    "website": "https://partipopulaire.be/"
+  },
+  {
+    "sigle": "N-VA",
+    "year_established": 2001,
+    "wikipedia": "https://fr.wikipedia.org/wiki/Nieuw-Vlaamse_Alliantie",
+    "inclusive": false
+  },
+  {
+    "sigle": "VLAAMS BELANG",
+    "year_established": 2004,
+    "inclusive": false,
+    "wikipedia": "https://en.wikipedia.org/wiki/Vlaams_Belang"
+  },
+  {
+    "sigle": "sp.a",
+    "year_established": 1885,
+    "year_renamed": 1978,
+    "wikipedia": "https://en.wikipedia.org/wiki/Socialistische_Partij_Anders"
+  },
+  {
+    "sigle": "PTB",
+    "year_established": 1979,
+    "wikipedia": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Belgium"
+  }
+]

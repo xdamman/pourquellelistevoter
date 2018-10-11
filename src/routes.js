@@ -5,6 +5,7 @@ const routes = nextRoutes();
 routes
   .add('faq')
   .add('contribuer')
+  .add('stats')
   .add('city', '/villes/:city', 'city')
   .add('list', '/villes/:city/:listname')
   .add('cityByZipCode', '/:zipcode', 'city')
